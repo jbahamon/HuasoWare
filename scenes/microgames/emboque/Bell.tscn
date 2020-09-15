@@ -4,9 +4,11 @@
 [ext_resource path="res://assets/emboque/bell.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 75.0207
+radius = 49.7519
 
 [node name="Bell" type="RigidBody2D"]
+position = Vector2( 0, -1 )
+gravity_scale = 0.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

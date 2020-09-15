@@ -29,9 +29,8 @@ func _process(delta):
 			screen_size.x * (1 - right_margin))
 	
 
-
-func _on_Stick_body_entered(body):
-	emit_signal("hit")
+func _on_Stick_body_entered(_body):
+	emit_signal("hit", self)
 	disable()
 	
 func disable():

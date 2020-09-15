@@ -2,14 +2,20 @@ extends RigidBody2D
 
 enum State {TENSE, SPINNING, CAUGHT}
 
-export var spinning_speed = 1.2
-var current_state = State.TENSE
 
-func _process(delta):
-	match current_state:
-		State.TENSE:
-			rotation = 0
-		State.SPINNING:
-			rotation -= spinning_speed * delta
-		State.CAUGHT:
-			rotation = 0
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "swing":
+		apply_impulse(Vector2(100, 0), Vector2(0, -420))
+		apply_impulse(Vector2(-100, 0), Vector2(0, 420))
+		gravity_scale = 8.0
+		
+		var horizontal_speed = - 120
+		
+		apply_central_impulse(Vector2(horizontal_speed, -1000.0))
+
+
+func _on_Stick_hit(_node):	
+	queue_free()
+
+func _on_GameOverArea_body_entered(_body):
+	queue_free()
