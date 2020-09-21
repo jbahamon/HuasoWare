@@ -14,11 +14,10 @@ _data = {
 "points": PoolVector2Array( -97.6766, -323.16, 97.6766, 323.16, 76.5184, 310.687, -4.8503, 583.301, 4.8503, -583.301, 573.413, 13.0423 )
 }
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 416.106, 78.7833 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "scroll"
+[sub_resource type="Animation" id=3]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:position")
@@ -33,7 +32,7 @@ tracks/0/keys = {
 "values": [ Vector2( 320, 240 ), Vector2( 320, 0 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "scroll_back"
 length = 0.5
 tracks/0/type = "value"
@@ -49,7 +48,7 @@ tracks/0/keys = {
 "values": [ Vector2( 320, 0 ), Vector2( 320, 100 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("SwingPath/PathFollow2D:unit_offset")
@@ -73,8 +72,8 @@ position = Vector2( 320, 170 )
 scale = Vector2( 1, 1 )
 
 [node name="Bell" parent="." instance=ExtResource( 2 )]
-position = Vector2( 436.097, 351.966 )
-rotation = -0.603546
+position = Vector2( 118.633, 286.776 )
+rotation = 1.02075
 linear_damp = 0.0
 angular_damp = 0.0
 
@@ -84,9 +83,9 @@ scale = Vector2( 0.92498, 0.658333 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="SwingPath"]
-position = Vector2( 435.46, 453.009 )
-rotation = -0.769432
-offset = 475.322
+position = Vector2( 92.2477, 353.986 )
+rotation = 1.15931
+offset = 45.7308
 cubic_interp = false
 loop = false
 
@@ -107,23 +106,23 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameOverArea"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 disabled = true
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
 
 [node name="GeneralAnimation" type="AnimationPlayer" parent="."]
 autoplay = "swing"
-anims/scroll = SubResource( 2 )
-anims/scroll_back = SubResource( 5 )
-anims/swing = SubResource( 3 )
+anims/scroll = SubResource( 3 )
+anims/scroll_back = SubResource( 4 )
+anims/swing = SubResource( 5 )
 script = ExtResource( 3 )
 [connection signal="emboque_lose" from="." to="HUD" method="_on_lose"]
 [connection signal="emboque_win" from="." to="HUD" method="_on_win"]
-[connection signal="hit" from="Stick" to="Bell" method="_on_Stick_hit"]
 [connection signal="hit" from="Stick" to="." method="_on_Stick_hit"]
-[connection signal="body_entered" from="GameOverArea" to="Bell" method="_on_GameOverArea_body_entered"]
+[connection signal="hit" from="Stick" to="Bell" method="_on_Stick_hit"]
 [connection signal="body_entered" from="GameOverArea" to="." method="_on_GameOverArea_body_entered"]
+[connection signal="body_entered" from="GameOverArea" to="Bell" method="_on_GameOverArea_body_entered"]
 [connection signal="animation_finished" from="GeneralAnimation" to="GeneralAnimation" method="_on_SwingAnimation_animation_finished"]
 [connection signal="animation_finished" from="GeneralAnimation" to="Bell" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="GeneralAnimation" to="GameOverArea" method="_on_SwingAnimation_animation_finished"]

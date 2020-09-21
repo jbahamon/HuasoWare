@@ -1,16 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/dfdChasquilla.otf" type="DynamicFontData" id=2]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 100
 outline_size = 10
 outline_color = Color( 0.0941176, 0.0627451, 0.0627451, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "pop"
+[sub_resource type="Animation" id=2]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("GameStatus:rect_scale")
@@ -61,6 +60,10 @@ tracks/3/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 2 )
+
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
 
@@ -73,8 +76,10 @@ margin_left = -175.0
 margin_top = -50.0
 margin_right = 175.0
 margin_bottom = 50.0
+rect_rotation = -45.0
+rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 175, 50 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 0 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
 text = "UYUUUUUI"
@@ -86,4 +91,20 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/pop = SubResource( 1 )
+anims/pop = SubResource( 2 )
+
+[node name="Timer" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -68.5
+margin_right = 68.5
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "0:00.00"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
