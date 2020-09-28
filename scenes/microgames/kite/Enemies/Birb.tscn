@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/kite/Enemies/birb1.png" type="Texture" id=1]
+[ext_resource path="res://assets/kite/Enemies/birb2.png" type="Texture" id=2]
+[ext_resource path="res://assets/kite/Enemies/birb0.png" type="Texture" id=3]
+[ext_resource path="res://scenes/microgames/kite/Enemies/Birb.gd" type="Script" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 8.65533
+height = 15.1365
+
+[node name="Birb" type="KinematicBody2D"]
+position = Vector2( 581.645, 222.487 )
+collision_mask = 0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -5, 0 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]

@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Huaso Ware"
-run/main_scene="res://scenes/microgames/emboque/EmboqueMain.tscn"
+run/main_scene="res://scenes/microgames/bellnstick/BellNStickMain.tscn"
 config/icon="res://icon.png"
 
 [display]

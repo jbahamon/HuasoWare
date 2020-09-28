@@ -10,13 +10,14 @@ var angular_velocity = starting_speed
 var input_velocity = 0
 var time = 0
 
+
 func _input(event):
 	if event.is_action_pressed("ui_left"):
 		input_velocity = - input_speed
 	elif event.is_action_pressed("ui_right"):
 		input_velocity = input_speed
-	
-		
+
+
 func _physics_process(delta):
 	var gravity = gravity_magnitude * sin(rotation)
 	
@@ -30,7 +31,8 @@ func _physics_process(delta):
 	
 	if collision:
 		emit_signal("top_fell")
-	 
+
+ 
 func _on_game_ended():
 	set_process_input(false)
 	set_physics_process(false)
