@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/microgames/kite/EnemySpawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/microgames/reusable/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/microgames/kite/KitePlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/microgames/kite/KiteMain.gd" type="Script" id=4]
+[ext_resource path="res://scenes/microgames/kite/SecondKite.tscn" type="PackedScene" id=5]
+
+[node name="KiteMain" type="Node"]
+script = ExtResource( 4 )
+SecondKite = ExtResource( 5 )
+
+[node name="KitePlayer" parent="." instance=ExtResource( 3 )]
+position = Vector2( 75, 240 )
+
+[node name="EnemySpawner" parent="." instance=ExtResource( 1 )]
+position = Vector2( 760, 0 )
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+[connection signal="kite_lose" from="." to="HUD" method="_on_lose"]
+[connection signal="kite_win" from="." to="HUD" method="_on_win"]
+[connection signal="body_entered" from="KitePlayer" to="KitePlayer" method="_on_KitePlayer_body_entered"]
+[connection signal="finished" from="KitePlayer" to="." method="_on_KitePlayer_finished"]
+[connection signal="hit" from="KitePlayer" to="." method="game_over"]
+[connection signal="no_more_enemies" from="EnemySpawner" to="." method="_on_EnemySpawner_no_more_enemies"]

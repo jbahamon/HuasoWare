@@ -15,34 +15,40 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 19.4583
-height = 10.2281
+radius = 31.9426
+height = 14.0306
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 4.41367, 40.621 )
+extents = Vector2( 8.99182, 71.9964 )
 
-[node name="Tree" type="KinematicBody2D"]
-position = Vector2( 605.392, 327.579 )
+[node name="Tree" type="KinematicBody2D" groups=[
+"enemies",
+]]
+position = Vector2( 606.141, 344.06 )
+collision_mask = 2147483648
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -60 )
+position = Vector2( 0, -120 )
+scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -85 )
+position = Vector2( 0, -170.403 )
 rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -35 )
+position = Vector2( 0, -69.461 )
 shape = SubResource( 3 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0.374573, 20.2272 )
+scale = Vector2( 5.08288, 3.77187 )
 rect = Rect2( -10, -60, 20, 20 )
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]

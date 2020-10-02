@@ -119,10 +119,10 @@ anims/swing = SubResource( 5 )
 script = ExtResource( 3 )
 [connection signal="emboque_lose" from="." to="HUD" method="_on_lose"]
 [connection signal="emboque_win" from="." to="HUD" method="_on_win"]
-[connection signal="hit" from="Stick" to="Bell" method="_on_Stick_hit"]
 [connection signal="hit" from="Stick" to="." method="_on_Stick_hit"]
-[connection signal="body_entered" from="GameOverArea" to="Bell" method="_on_GameOverArea_body_entered"]
+[connection signal="hit" from="Stick" to="Bell" method="_on_Stick_hit"]
 [connection signal="body_entered" from="GameOverArea" to="." method="_on_GameOverArea_body_entered"]
+[connection signal="body_entered" from="GameOverArea" to="Bell" method="_on_GameOverArea_body_entered"]
 [connection signal="animation_finished" from="GeneralAnimation" to="GeneralAnimation" method="_on_SwingAnimation_animation_finished"]
 [connection signal="animation_finished" from="GeneralAnimation" to="Bell" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="GeneralAnimation" to="GameOverArea" method="_on_SwingAnimation_animation_finished"]

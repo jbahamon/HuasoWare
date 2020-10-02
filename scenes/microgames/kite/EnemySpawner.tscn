@@ -3,5 +3,5 @@
 [ext_resource path="res://scenes/microgames/kite/EnemySpawner.gd" type="Script" id=1]
 
 [node name="EnemySpawner" type="Node2D"]
-position = Vector2( 640, 240 )
+position = Vector2( 317.864, 240 )
 script = ExtResource( 1 )

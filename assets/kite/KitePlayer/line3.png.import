@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/line.png-5cf4986b062ca0dde510df87236917ce.stex"
+path="res://.import/line3.png-4d811afd5c775d290e6937cc84ef614d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kite/KitePlayer/line.png"
-dest_files=[ "res://.import/line.png-5cf4986b062ca0dde510df87236917ce.stex" ]
+source_file="res://assets/kite/KitePlayer/line3.png"
+dest_files=[ "res://.import/line3.png-4d811afd5c775d290e6937cc84ef614d.stex" ]
 
 [params]
 
