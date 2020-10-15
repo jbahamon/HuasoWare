@@ -31,3 +31,4 @@ autostart = true
 [connection signal="trompo_win" from="." to="SpinningTop" method="_on_game_ended"]
 [connection signal="top_fell" from="SpinningTop" to="." method="_on_SpinningTop_fell"]
 [connection signal="timeout" from="WinTimer" to="." method="_on_WinTimer_timeout"]
+[connection signal="message_over" from="HUD" to="." method="_on_HUD_message_over"]

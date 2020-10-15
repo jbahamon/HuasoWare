@@ -12,8 +12,6 @@ var current_velocity = Vector2(0, 0)
 var disable_controls := false
 onready var screen_size = get_viewport_rect().size
 
-func _ready():
-	$CollisionShape2D.set_deferred("disabled", true)
 
 func _process(delta):
 	

@@ -23,3 +23,4 @@ position = Vector2( 760, 0 )
 [connection signal="finished" from="KitePlayer" to="." method="_on_KitePlayer_finished"]
 [connection signal="hit" from="KitePlayer" to="." method="game_over"]
 [connection signal="no_more_enemies" from="EnemySpawner" to="." method="_on_EnemySpawner_no_more_enemies"]
+[connection signal="message_over" from="HUD" to="." method="_on_HUD_message_over"]

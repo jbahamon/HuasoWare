@@ -32,7 +32,7 @@ func _process(delta):
 
 
 func _on_Stick_body_entered(_body):
-	emit_signal("hit", self)
+	emit_signal("hit")
 	disable()
 
 

@@ -26,7 +26,6 @@ script = ExtResource( 1 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "spinning"
-frame = 2
 playing = true
 offset = Vector2( -5, -265 )
 

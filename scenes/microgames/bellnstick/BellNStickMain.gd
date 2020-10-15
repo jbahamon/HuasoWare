@@ -1,17 +1,13 @@
-extends Node
+extends "res://scenes/microgames/Microgame.gd"
 
 export (PackedScene) var WinBell
-
-signal emboque_win
-signal emboque_lose
-
 
 func _ready():
 	randomize()
 
-
-func _on_Stick_hit(_stick):
-	emit_signal("emboque_win")
+func _on_Stick_hit():
+	game_won = true
+	emit_signal("win")
 	var bell = WinBell.instance()
 	add_child(bell)
 	bell.position = $Stick.position - Vector2(0, 100)
@@ -19,4 +15,9 @@ func _on_Stick_hit(_stick):
 
 
 func _on_GameOverArea_body_entered(_body):
-	emit_signal("emboque_lose")
+	game_won = false
+	emit_signal("lose")
+
+
+func _on_HUD_message_over():
+	emit_signal("game_over", game_won)

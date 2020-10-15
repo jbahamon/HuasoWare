@@ -14,7 +14,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		apply_central_impulse(Vector2(horizontal_speed, -1000.0))
 
 
-func _on_Stick_hit(_node):	
+func _on_Stick_hit():	
 	queue_free()
 
 

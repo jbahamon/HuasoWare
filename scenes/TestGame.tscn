@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/TestGame.gd" type="Script" id=2]
+[ext_resource path="res://scenes/microgames/reusable/HUD.tscn" type="PackedScene" id=3]
+
+[node name="TestGame" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.5
+margin_top = -75.0
+margin_right = 150.5
+margin_bottom = 75.0
+theme = ExtResource( 1 )
+text = "PRESS 'Z' TO WIN
+
+PRESS 'X' TO LOSE"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+[connection signal="lose" from="." to="HUD" method="_on_lose"]
+[connection signal="win" from="." to="HUD" method="_on_win"]
+[connection signal="message_over" from="HUD" to="." method="_on_HUD_message_over"]
