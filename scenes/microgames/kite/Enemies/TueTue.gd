@@ -43,4 +43,4 @@ func move(delta):
 				direction = (get_node("../../KitePlayer").global_position - global_position).normalized()
 				current_state = State.CHASING_PLAYER
 		State.CHASING_PLAYER:
-			var foo = move_and_collide(350 * direction * delta)
+			move_and_collide(350 * direction * delta)

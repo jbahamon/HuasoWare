@@ -7,7 +7,7 @@ var games = [
 ]
 
 var score = 0
-var lives = 5
+var lives = 1
 var current_game = null
 
 onready var score_label = $TransitionUI/VBoxContainer/Score
@@ -15,11 +15,11 @@ onready var lives_label = $TransitionUI/VBoxContainer/Lives
 onready var next_game_label = $TransitionUI/VBoxContainer/ReferenceRect/ColorRect/NextGameLabel
 
 func _ready():
+	update_labels()
 	$NextGameTimer.start()
 
 func _process(_delta):
 	next_game_label.text = "Next game in\n%d" % (floor($NextGameTimer.time_left) + 1)
-
 
 func _on_next_game():
 	$AnimationPlayer.current_animation = "ui_out"
@@ -27,23 +27,30 @@ func _on_next_game():
 	
 func _on_transition_finished(animation_name):
 	match animation_name:
-		'ui_out':
+		"ui_out":
 			$TransitionUI.visible = false
 			$Camera2D.zoom = Vector2(1, 1)
 			instance_game()
-		'game_in':
+		"game_in":
 			start_game()
-		'game_out':
+		"game_out":
 			remove_child(current_game)
 			current_game = null
 			$AnimationPlayer.current_animation = "ui_in"
 			$AnimationPlayer.play()
 			$TransitionUI.visible = true
 			$Camera2D.zoom = Vector2(0.1, 0.1)
-			
-		'ui_in':
-			$NextGameTimer.start(3)
-			next_game_label.set("custom_colors/font_color", Color(1,1,1))
+		"ui_in":
+			update_labels()
+			if lives > 0:
+				$NextGameTimer.start(3)
+				next_game_label.set("custom_colors/font_color", Color(1,1,1))
+			else:
+				$CanvasLayer/GameOverUI/GameOverLabel.text = "GAME OVER\nFINAL SCORE: %d" % score
+				$AnimationPlayer.current_animation = "game_over"
+				$AnimationPlayer.play()
+		"game_over":
+			$CanvasLayer/GameOverUI/HBoxContainer/TryAgainButton.grab_focus()
 
 func instance_game():
 	current_game = games[randi() % games.size()].instance()
@@ -75,7 +82,15 @@ func _on_game_over(game_won):
 		score += 1
 	else:
 		lives -= 1
-		
-	yield(get_tree().create_timer(1.0), "timeout")
+
+
+func _on_TryAgainButton_pressed():
+	get_tree().change_scene("res://scenes/GameContainer.tscn")
+
+
+func _on_QuitButton_pressed():
+	get_tree().change_scene("res://scenes/MainMenu.tscn")
+
+func update_labels():
 	score_label.text ="SCORE: %d" % score
 	lives_label.text = "LIVES: %d" % lives

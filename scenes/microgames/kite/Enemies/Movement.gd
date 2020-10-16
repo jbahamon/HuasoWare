@@ -88,7 +88,7 @@ class TwoPointsMovement:
 	
 	static func from_args(element, args):
 		var position
-		var destination
+		var args_destination
 		var movement_time
 		
 		if "position" in element:
@@ -97,13 +97,13 @@ class TwoPointsMovement:
 			position = args.position
 		
 		if "secondary_position" in element:
-			destination = element.secondary_position
+			args_destination = element.secondary_position
 		else:
-			destination = args.secondary_position
+			args_destination = args.secondary_position
 		
 		if "movement_time" in element:
 			movement_time = element.movement_time
 		else:
 			movement_time = args.movement_time
 		
-		return TwoPointsMovement.new(position, destination, movement_time)
+		return TwoPointsMovement.new(position, args_destination, movement_time)

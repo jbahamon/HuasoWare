@@ -2,6 +2,9 @@ extends "res://scenes/microgames/Microgame.gd"
 
 export (PackedScene) var WinBell
 
+signal win
+signal lose
+
 func _ready():
 	randomize()
 

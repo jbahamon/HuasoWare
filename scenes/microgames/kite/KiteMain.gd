@@ -24,7 +24,7 @@ func _on_EnemySpawner_no_more_enemies():
 func _on_KitePlayer_finished():
 	show_heart()
 	game_won = true
-	emit_signal("win")
+	emit_signal("kite_win")
 
 func spawn_second_kite():
 	var second_kite = SecondKite.instance()

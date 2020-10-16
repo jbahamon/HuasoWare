@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/GameContainer.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/dfdChasquilla.otf" type="DynamicFontData" id=2]
-[ext_resource path="res://scenes/Theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/Theme.tres" type="Theme" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 96
@@ -40,6 +40,70 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "game_over"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/TransitionFadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.3, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/GameOverUI:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/GameOverUI:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/GameOverUI/HBoxContainer/TryAgainButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CanvasLayer/GameOverUI/HBoxContainer/QuitButton:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -220,6 +284,57 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="GameOverUI" type="VBoxContainer" parent="CanvasLayer"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer/GameOverUI"]
+margin_top = 123.0
+margin_right = 620.0
+margin_bottom = 285.0
+theme = ExtResource( 3 )
+text = "GAME OVER
+FINAL SCORE: 2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GameOverUI"]
+margin_top = 305.0
+margin_right = 620.0
+margin_bottom = 337.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="TryAgainButton" type="Button" parent="CanvasLayer/GameOverUI/HBoxContainer"]
+margin_left = 209.0
+margin_right = 332.0
+margin_bottom = 32.0
+theme = ExtResource( 3 )
+disabled = true
+text = "TRY AGAIN?"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/GameOverUI/HBoxContainer"]
+margin_left = 362.0
+margin_right = 411.0
+margin_bottom = 32.0
+theme = ExtResource( 3 )
+disabled = true
+text = "QUIT"
+
 [node name="NextGameTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
@@ -227,6 +342,7 @@ one_shot = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/game_in = SubResource( 2 )
 anims/game_out = SubResource( 3 )
+anims/game_over = SubResource( 6 )
 anims/ui_in = SubResource( 4 )
 anims/ui_out = SubResource( 5 )
 
@@ -234,5 +350,7 @@ anims/ui_out = SubResource( 5 )
 position = Vector2( 320, 240 )
 current = true
 smoothing_enabled = true
+[connection signal="pressed" from="CanvasLayer/GameOverUI/HBoxContainer/TryAgainButton" to="." method="_on_TryAgainButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOverUI/HBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="timeout" from="NextGameTimer" to="." method="_on_next_game"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_transition_finished"]

@@ -61,7 +61,7 @@ func _process(delta):
 			(1.0 - margin) * screen_size.y)
 
 
-func _on_KitePlayer_body_entered(body):
+func _on_KitePlayer_body_entered(_body):
 	get_sad()
 	disable_controls = true
 	emit_signal("hit")
@@ -76,5 +76,5 @@ func move_to_center():
 			2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
 	
-func _on_moved_to_center(object, key):
+func _on_moved_to_center(_object, _key):
 	emit_signal("finished")
