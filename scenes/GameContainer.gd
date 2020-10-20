@@ -7,7 +7,7 @@ var games = [
 ]
 
 var score = 0
-var lives = 1
+var lives = 4
 var current_game = null
 
 onready var score_label = $TransitionUI/VBoxContainer/Score

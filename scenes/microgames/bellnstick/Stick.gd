@@ -11,8 +11,8 @@ var screen_size
 
 
 func _ready():
+	disable()
 	screen_size = get_viewport_rect().size
-
 
 func _process(delta):
 	
@@ -33,9 +33,19 @@ func _process(delta):
 
 func _on_Stick_body_entered(_body):
 	emit_signal("hit")
-	disable()
+
+
+func enable():
+	$AnimationPlayer.play("arrows_fade_in")
+	disable_controls = false
+	$Arrows/LeftArrow.frame = 0
+	$Arrows/RightArrow.frame = 0
+	$Arrows/LeftArrow.play()
+	$Arrows/RightArrow.play()
+	$CollisionShape2D.set_deferred("disabled", false)
 
 
 func disable():
+	$AnimationPlayer.play("arrows_fade_out")
 	disable_controls = true
 	$CollisionShape2D.set_deferred("disabled", true)

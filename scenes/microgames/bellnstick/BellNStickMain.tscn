@@ -29,7 +29,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 320, 240 ), Vector2( 320, 0 ) ]
+"values": [ Vector2( 320, 240 ), Vector2( 320, -50 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -45,7 +45,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 320, 0 ), Vector2( 320, 100 ) ]
+"values": [ Vector2( 320, -50 ), Vector2( 320, 100 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -70,10 +70,11 @@ WinBell = ExtResource( 7 )
 [node name="Stick" parent="." instance=ExtResource( 1 )]
 position = Vector2( 320, 170 )
 scale = Vector2( 1, 1 )
+speed = 600
 
 [node name="Bell" parent="." instance=ExtResource( 2 )]
-position = Vector2( 118.633, 286.776 )
-rotation = 1.02075
+position = Vector2( 436.097, 351.966 )
+rotation = -0.603546
 linear_damp = 0.0
 angular_damp = 0.0
 
@@ -83,9 +84,9 @@ scale = Vector2( 0.92498, 0.658333 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="SwingPath"]
-position = Vector2( 92.2477, 353.986 )
-rotation = 1.15931
-offset = 45.7308
+position = Vector2( 435.46, 453.009 )
+rotation = -0.769432
+offset = 475.322
 cubic_interp = false
 loop = false
 
@@ -124,6 +125,7 @@ script = ExtResource( 3 )
 [connection signal="body_entered" from="GameOverArea" to="." method="_on_GameOverArea_body_entered"]
 [connection signal="body_entered" from="GameOverArea" to="Bell" method="_on_GameOverArea_body_entered"]
 [connection signal="message_over" from="HUD" to="." method="_on_HUD_message_over"]
-[connection signal="animation_finished" from="GeneralAnimation" to="GeneralAnimation" method="_on_SwingAnimation_animation_finished"]
+[connection signal="animation_finished" from="GeneralAnimation" to="." method="_on_animation_finished"]
 [connection signal="animation_finished" from="GeneralAnimation" to="Bell" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="GeneralAnimation" to="GameOverArea" method="_on_SwingAnimation_animation_finished"]
+[connection signal="animation_finished" from="GeneralAnimation" to="GeneralAnimation" method="_on_SwingAnimation_animation_finished"]
