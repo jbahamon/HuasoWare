@@ -13,10 +13,10 @@
 [ext_resource path="res://assets/kite/KitePlayer/line3.png" type="Texture" id=11]
 [ext_resource path="res://assets/kite/KitePlayer/line2.png" type="Texture" id=12]
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=1]
 radius = 19.481
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 11 ) ],
 "loop": true,
@@ -32,7 +32,7 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": true,
@@ -47,7 +47,7 @@ script = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -0.890869, -0.8909 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -56,9 +56,9 @@ position = Vector2( -2, 26 )
 
 [node name="Line" type="AnimatedSprite" parent="LinePivot"]
 scale = Vector2( 2, 2 )
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "flapping"
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( -94, 64 )
 
@@ -71,7 +71,7 @@ self_modulate = Color( 0.141176, 0.713726, 0.635294, 1 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "flapping"
-frame = 2
+frame = 1
 playing = true
 centered = false
 offset = Vector2( -30, -2 )
@@ -81,7 +81,8 @@ self_modulate = Color( 1, 0.45, 0.45, 1 )
 position = Vector2( -2, 0 )
 scale = Vector2( 2, 2 )
 z_index = 2
-frames = SubResource( 2 )
+frames = SubResource( 4 )
 animation = "flying"
+frame = 3
 playing = true
 [connection signal="tween_completed" from="Tween" to="." method="_on_moved_to_center"]

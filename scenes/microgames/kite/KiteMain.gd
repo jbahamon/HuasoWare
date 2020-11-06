@@ -9,7 +9,7 @@ func _ready():
 
 
 func game_over():
-	get_tree().call_group("enemies", "stop")
+	get_tree().call_group("enemies", "set_physics_process", false)
 	get_tree().call_group("bullets", "queue_free")
 	$EnemySpawner.stop()
 	game_won = false
