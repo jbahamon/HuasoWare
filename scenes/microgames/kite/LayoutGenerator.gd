@@ -90,8 +90,8 @@ var high = [birb_squad_high, clouds]
 var wide = [tuetue_squad, birb_squad_wide]
 var low = [birb_squad_low, trees]
 
-func _init(difficulty):
-	self.difficulty = difficulty
+func _init(game_difficulty):
+	self.difficulty = game_difficulty
 	
 func get_layout():
 	randomize()

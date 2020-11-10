@@ -58,7 +58,7 @@ position = Vector2( -2, 26 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "flapping"
-frame = 2
+frame = 3
 playing = true
 offset = Vector2( -94, 64 )
 
@@ -71,7 +71,7 @@ self_modulate = Color( 0.262745, 0.321569, 0.447059, 1 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "flapping"
-frame = 2
+frame = 3
 playing = true
 centered = false
 offset = Vector2( -30, -2 )
@@ -83,5 +83,6 @@ scale = Vector2( 2, 2 )
 z_index = 2
 frames = SubResource( 4 )
 animation = "flying"
+frame = 1
 playing = true
 [connection signal="tween_completed" from="Tween" to="." method="_on_moved_to_center"]
