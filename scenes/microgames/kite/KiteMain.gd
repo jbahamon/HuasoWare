@@ -11,6 +11,7 @@ func _ready():
 func game_over():
 	get_tree().call_group("enemies", "set_physics_process", false)
 	get_tree().call_group("bullets", "queue_free")
+	$BG.set_process(false)
 	$EnemySpawner.stop()
 	game_won = false
 	emit_signal("kite_lose")
@@ -19,6 +20,7 @@ func game_over():
 func _on_EnemySpawner_no_more_enemies():
 	spawn_second_kite()
 	yield(get_tree().create_timer(2), "timeout")
+	$BG.set_process(false)
 	$KitePlayer.move_to_center()
 
 func _on_KitePlayer_finished():

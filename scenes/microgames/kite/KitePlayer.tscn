@@ -58,7 +58,7 @@ position = Vector2( -2, 26 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "flapping"
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( -94, 64 )
 
@@ -67,11 +67,11 @@ position = Vector2( -4, 26 )
 z_index = 1
 
 [node name="Scarf" type="AnimatedSprite" parent="ScarfPivot"]
-self_modulate = Color( 0.141176, 0.713726, 0.635294, 1 )
+self_modulate = Color( 0.262745, 0.321569, 0.447059, 1 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "flapping"
-frame = 1
+frame = 2
 playing = true
 centered = false
 offset = Vector2( -30, -2 )
@@ -83,6 +83,5 @@ scale = Vector2( 2, 2 )
 z_index = 2
 frames = SubResource( 4 )
 animation = "flying"
-frame = 3
 playing = true
 [connection signal="tween_completed" from="Tween" to="." method="_on_moved_to_center"]

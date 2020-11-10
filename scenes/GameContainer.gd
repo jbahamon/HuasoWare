@@ -34,6 +34,7 @@ func _on_transition_finished(animation_name):
 		"game_in":
 			start_game()
 		"game_out":
+			$Background.modulate = Color.from_hsv(randf(), 0.25, 1.0)
 			remove_child(current_game)
 			current_game = null
 			$AnimationPlayer.current_animation = "ui_in"
