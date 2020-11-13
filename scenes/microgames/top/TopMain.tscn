@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/microgames/top/TopMain.gd" type="Script" id=1]
 [ext_resource path="res://scenes/microgames/top/SpinningTop.tscn" type="PackedScene" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/ui/arrow0.png" type="Texture" id=4]
 [ext_resource path="res://assets/ui/arrow2.png" type="Texture" id=5]
 [ext_resource path="res://assets/ui/arrow1.png" type="Texture" id=6]
-
+[ext_resource path="res://assets/top/bg.ogg" type="AudioStream" id=7]
 
 [sub_resource type="AnimatedTexture" id=1]
 frames = 3
@@ -74,10 +74,15 @@ one_shot = true
 autostart = true
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
-[connection signal="trompo_lose" from="." to="HUD" method="_on_lose"]
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -5.0
+autoplay = true
 [connection signal="trompo_lose" from="." to="SpinningTop" method="_on_game_ended"]
-[connection signal="trompo_win" from="." to="HUD" method="_on_win"]
+[connection signal="trompo_lose" from="." to="HUD" method="_on_lose"]
 [connection signal="trompo_win" from="." to="SpinningTop" method="_on_game_ended"]
+[connection signal="trompo_win" from="." to="HUD" method="_on_win"]
 [connection signal="top_fell" from="SpinningTop" to="." method="_on_SpinningTop_fell"]
 [connection signal="timeout" from="WinTimer" to="." method="_on_WinTimer_timeout"]
 [connection signal="message_over" from="HUD" to="." method="_on_HUD_message_over"]

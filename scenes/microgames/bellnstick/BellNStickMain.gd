@@ -16,12 +16,16 @@ func _on_Stick_hit():
 	
 	game_won = true
 	$Stick.disable()
+	$WinBG.visible = true
+	$WinSound.play()
 	emit_signal("win")
 
 
 func _on_GameOverArea_body_entered(_body):
 	game_won = false
 	$Stick.disable()
+	$BGMusic.stop()
+	$LoseSound.play()
 	emit_signal("lose")
 
 

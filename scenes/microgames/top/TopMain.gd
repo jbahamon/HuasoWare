@@ -28,6 +28,7 @@ func _on_SpinningTop_fell():
 	$HUD.set_timer_enabled(false)
 	update_arrows(ArrowState.NONE)
 	set_process(false)
+	$BGMusic.stop()
 	emit_signal("trompo_lose")
 
 

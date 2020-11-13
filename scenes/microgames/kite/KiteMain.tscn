@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/microgames/kite/EnemySpawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/microgames/reusable/HUD.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/microgames/kite/SecondKite.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/kite/bg2.png" type="Texture" id=6]
 [ext_resource path="res://scenes/microgames/kite/BG.gd" type="Script" id=7]
+[ext_resource path="res://assets/kite/bg.ogg" type="AudioStream" id=8]
 
 [node name="KiteMain" type="Node"]
 script = ExtResource( 4 )
@@ -37,6 +38,11 @@ position = Vector2( 75, 240 )
 position = Vector2( 760, 0 )
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -20.0
+autoplay = true
 [connection signal="kite_lose" from="." to="HUD" method="_on_lose"]
 [connection signal="kite_win" from="." to="HUD" method="_on_win"]
 [connection signal="body_entered" from="KitePlayer" to="KitePlayer" method="_on_KitePlayer_body_entered"]

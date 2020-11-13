@@ -1,13 +1,19 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/microgames/top/SpinningTop.gd" type="Script" id=1]
 [ext_resource path="res://assets/top/top3.png" type="Texture" id=2]
 [ext_resource path="res://assets/top/top2.png" type="Texture" id=3]
 [ext_resource path="res://assets/top/top0.png" type="Texture" id=4]
 [ext_resource path="res://assets/top/top1.png" type="Texture" id=5]
+[ext_resource path="res://assets/top/stopped.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "stopped",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "spinning",
@@ -26,6 +32,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "spinning"
+frame = 1
 playing = true
 offset = Vector2( -5, -265 )
 

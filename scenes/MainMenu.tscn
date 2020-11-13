@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assets/fonts/dfdChasquilla.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/OpenDyslexic-Bold.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/Theme.tres" type="Theme" id=2]
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=3]
 [ext_resource path="res://assets/bgs/bgA1.png" type="Texture" id=4]
@@ -20,8 +20,9 @@ frame_3/texture = ExtResource( 5 )
 frame_3/delay_sec = 0.0
 
 [sub_resource type="DynamicFont" id=2]
-size = 80
+size = 60
 outline_size = 12
+use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=3]
@@ -54,6 +55,8 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
 custom_constants/margin_right = 120
 custom_constants/margin_top = 80
 custom_constants/margin_left = 120
@@ -68,16 +71,16 @@ margin_left = 120.0
 margin_top = 80.0
 margin_right = 520.0
 margin_bottom = 400.0
-custom_constants/separation = 55
+custom_constants/separation = 25
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Logo" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_top = 48.0
+margin_top = 26.0
 margin_right = 400.0
-margin_bottom = 128.0
+margin_bottom = 131.0
 size_flags_vertical = 1
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 2 )
@@ -85,15 +88,15 @@ text = "HUASOHUER"
 align = 1
 
 [node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 183.0
+margin_top = 156.0
 margin_right = 400.0
-margin_bottom = 272.0
+margin_bottom = 293.0
 custom_constants/separation = 25
 alignment = 1
 
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer/MenuOptions"]
 margin_right = 400.0
-margin_bottom = 32.0
+margin_bottom = 56.0
 focus_neighbour_right = NodePath("../Exit")
 focus_neighbour_bottom = NodePath("../Exit")
 focus_next = NodePath("../Exit")
@@ -101,9 +104,9 @@ theme = ExtResource( 2 )
 text = "Start!"
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/MenuOptions"]
-margin_top = 57.0
+margin_top = 81.0
 margin_right = 400.0
-margin_bottom = 89.0
+margin_bottom = 137.0
 focus_neighbour_left = NodePath("../Start")
 focus_neighbour_top = NodePath("../Start")
 focus_previous = NodePath("../Start")

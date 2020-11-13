@@ -58,8 +58,8 @@ var clouds = {
 	"elements": [
 		{"position": Vector2(0, 100), "frame": 0},	
 		{"position": Vector2(70, 120), "frame": 2},
-		{"position": Vector2(147, 110), "frame": 1},
-		{"position": Vector2(228, 98), "frame": 0},	
+		{"position": Vector2(147, 90), "frame": 1},
+		{"position": Vector2(228, 70), "frame": 0},	
 		{"position": Vector2(331, 123), "frame": 3},
 		{"position": Vector2(400, 105), "frame": 0}
 	]

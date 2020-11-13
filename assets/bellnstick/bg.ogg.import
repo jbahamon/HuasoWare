@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bg.ogg-d6770be98d724751eeaeef40cf744d6c.oggstr"
+
+[deps]
+
+source_file="res://assets/bellnstick/bg.ogg"
+dest_files=[ "res://.import/bg.ogg-d6770be98d724751eeaeef40cf744d6c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

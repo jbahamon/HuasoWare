@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/GameContainer.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/dfdChasquilla.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/OpenDyslexic-Bold.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/Theme.tres" type="Theme" id=3]
 [ext_resource path="res://assets/bgs/bgB2.png" type="Texture" id=4]
 [ext_resource path="res://assets/bgs/bgB3.png" type="Texture" id=5]
@@ -20,7 +20,7 @@ frame_3/texture = ExtResource( 6 )
 frame_3/delay_sec = 0.0
 
 [sub_resource type="DynamicFont" id=2]
-size = 96
+size = 71
 outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
@@ -256,7 +256,7 @@ __meta__ = {
 
 [node name="Score" type="Label" parent="TransitionUI/VBoxContainer"]
 margin_right = 620.0
-margin_bottom = 96.0
+margin_bottom = 125.0
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 2 )
 text = "SCORE: 2"
@@ -267,9 +267,9 @@ __meta__ = {
 }
 
 [node name="ReferenceRect" type="ReferenceRect" parent="TransitionUI/VBoxContainer"]
-margin_top = 100.0
+margin_top = 129.0
 margin_right = 620.0
-margin_bottom = 360.0
+margin_bottom = 331.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 border_color = Color( 1, 0, 0, 0 )
@@ -307,12 +307,12 @@ __meta__ = {
 }
 
 [node name="Lives" type="Label" parent="TransitionUI/VBoxContainer"]
-margin_top = 364.0
+margin_top = 335.0
 margin_right = 620.0
 margin_bottom = 460.0
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 2 )
-text = "Lives: 2"
+text = "LIVES: 2"
 align = 1
 valign = 1
 __meta__ = {

@@ -8,10 +8,12 @@ func show_message(text):
 
 func _on_win():
 	show_message("UYUUUUI!!")
+	$WinSound.play()
 
 
 func _on_lose():
 	show_message("JUEEEE...")
+	$LoseSound.play()
 
 
 func set_timer_enabled(val):

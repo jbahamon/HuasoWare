@@ -14,6 +14,7 @@ func game_over():
 	$BG.set_process(false)
 	$EnemySpawner.stop()
 	game_won = false
+	$BGMusic.stop()
 	emit_signal("kite_lose")
 
 
