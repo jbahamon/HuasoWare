@@ -42,6 +42,7 @@ func _physics_process(delta):
 	
 	if collision:
 		$AnimatedSprite.animation = 'stopped'
+		$FallSound.play()
 		emit_signal("top_fell")
 
  

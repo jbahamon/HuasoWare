@@ -29,12 +29,15 @@ func _on_SpinningTop_fell():
 	update_arrows(ArrowState.NONE)
 	set_process(false)
 	$BGMusic.stop()
+	$TickingSound.stop()
 	emit_signal("trompo_lose")
 
 
 func _on_WinTimer_timeout():
 	game_won = true
+	$HUD.update_timer(0.0)
 	set_process(false)
+	$TickingSound.stop()
 	update_arrows(ArrowState.NONE)
 	emit_signal("trompo_win")
 

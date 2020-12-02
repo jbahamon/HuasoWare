@@ -30,12 +30,14 @@ func _on_transition_finished(animation_name):
 		"ui_out":
 			$TransitionUI.visible = false
 			$Camera2D.zoom = Vector2(1, 1)
+			$BGSong.stop()
 			instance_game()
 		"game_in":
 			start_game()
 		"game_out":
 			$Background.modulate = Color.from_hsv(randf(), 0.25, 1.0)
 			remove_child(current_game)
+			
 			current_game = null
 			$AnimationPlayer.current_animation = "ui_in"
 			$AnimationPlayer.play()
@@ -44,7 +46,8 @@ func _on_transition_finished(animation_name):
 		"ui_in":
 			update_labels()
 			if lives > 0:
-				$NextGameTimer.start(3)
+				$BGSong.play()
+				$NextGameTimer.start()
 				next_game_label.set("custom_colors/font_color", Color(1,1,1))
 			else:
 				$CanvasLayer/GameOverUI/GameOverLabel.text = "GAME OVER\nFINAL SCORE: %d" % score

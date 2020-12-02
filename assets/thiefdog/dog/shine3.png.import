@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bgA0 (2).png-7104aa4281d05e64d8f9ed9ad36c5df1.stex"
+path="res://.import/shine3.png-fec50b09390e209802117d901a3e0bf9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bgs/bgA0 (2).png"
-dest_files=[ "res://.import/bgA0 (2).png-7104aa4281d05e64d8f9ed9ad36c5df1.stex" ]
+source_file="res://assets/thiefdog/dog/shine3.png"
+dest_files=[ "res://.import/shine3.png-fec50b09390e209802117d901a3e0bf9.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

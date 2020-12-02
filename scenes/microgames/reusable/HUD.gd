@@ -21,7 +21,7 @@ func set_timer_enabled(val):
 
 
 func update_timer(remaining_time):
-	$Timer.text = "%.3f" % remaining_time
+	$Timer.text = "%.2f" % remaining_time
 
 
 func _on_animation_finished(_anim_name):
