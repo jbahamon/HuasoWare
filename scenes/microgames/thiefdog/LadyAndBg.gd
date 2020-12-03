@@ -35,3 +35,7 @@ func _process(delta):
 				current_state = State.TALKING
 				current_threshold = rand_range(0.3 * talk_time, talk_time)
 
+func on_catch_dog():
+	$AnimatedSprite.animation = "look"
+	$SpeechBubble.visible = false
+	

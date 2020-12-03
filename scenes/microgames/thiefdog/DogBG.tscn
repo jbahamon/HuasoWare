@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/thiefdog/dog/superbg.png" type="Texture" id=1]
 [ext_resource path="res://scenes/microgames/thiefdog/DogBG.gd" type="Script" id=2]
@@ -7,6 +7,21 @@
 [ext_resource path="res://assets/thiefdog/dog/shine1.png" type="Texture" id=5]
 [ext_resource path="res://assets/thiefdog/dog/shine4.png" type="Texture" id=6]
 [ext_resource path="res://assets/thiefdog/dog/shine2.png" type="Texture" id=7]
+[ext_resource path="res://assets/thiefdog/dog/surprise1.png" type="Texture" id=8]
+[ext_resource path="res://assets/thiefdog/dog/surprise0.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "surprise",
+"speed": 10.0
+} ]
 
 [sub_resource type="AnimatedTexture" id=1]
 frames = 4
@@ -18,16 +33,22 @@ frame_2/delay_sec = 0.0
 frame_3/texture = ExtResource( 6 )
 frame_3/delay_sec = 0.0
 
-[node name="BG" type="Sprite"]
-self_modulate = Color( 0.313726, 0.32549, 0.517647, 1 )
-position = Vector2( -160, -120 )
-texture = ExtResource( 1 )
-centered = false
+[node name="DogBG" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="BGSprite" type="AnimatedSprite" parent="."]
+self_modulate = Color( 0.313726, 0.32549, 0.517647, 1 )
+position = Vector2( -160, -120 )
+frames = SubResource( 2 )
+playing = true
+centered = false
+offset = Vector2( 160, 120 )
+
 [node name="Shines" type="TextureRect" parent="."]
-margin_right = 680.0
-margin_bottom = 512.0
+margin_left = -6.59229
+margin_top = -4.64691
+margin_right = 673.408
+margin_bottom = 507.353
 rect_scale = Vector2( 0.5, 0.5 )
 texture = SubResource( 1 )
 stretch_mode = 2

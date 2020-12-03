@@ -14,7 +14,13 @@ func try_chomp():
 
 func on_win():
 	$AnimationPlayer.play("chomp")
-
+	$ChompSound.play()
+	
+	
+func on_lose():
+	$AnimationPlayer.play("caught")
+	
+	
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		set_process_input(false)
@@ -24,3 +30,4 @@ func _input(event):
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "try_chomp":
 		emit_signal("try_chomp_finish", did_win)
+		

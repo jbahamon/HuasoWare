@@ -29,7 +29,9 @@ func  _on_Dog_try_chomp_finish(did_win):
 		$Dog.on_win()
 	else:
 		$AnimationPlayer.play("lose")
-		# $Dog.on_lose()
+		$LadyAndBG.on_catch_dog()
+		$LadyCloseUp.shake(2, 120, 20)
+		$Dog.on_lose()
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
