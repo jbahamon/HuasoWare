@@ -14,7 +14,9 @@ func _on_Dog_try_chomp_finish(did_win):
 	$BeamCreator.stop_spawning()
 	$Shines.visible = did_win
 	visible = did_win
-	
-	if not did_win:
-		$BGSprite.play("surprise")
+
+
+func _on_LadyCloseUp_shake_over():
+	visible = true
+	$BGSprite.play("surprise")
 	

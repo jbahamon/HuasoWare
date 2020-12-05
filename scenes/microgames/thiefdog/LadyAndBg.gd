@@ -38,4 +38,4 @@ func _process(delta):
 func on_catch_dog():
 	$AnimatedSprite.animation = "look"
 	$SpeechBubble.visible = false
-	
+	$AngrySound.play()

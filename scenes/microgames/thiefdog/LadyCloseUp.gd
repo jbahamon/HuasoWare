@@ -1,4 +1,5 @@
 extends Camera2D
+signal shake_over
 
 var _duration = 0.0
 var _period_in_ms = 0.0
@@ -40,6 +41,7 @@ func _process(delta):
 	if _timer <= 0:
 		_timer = 0
 		set_offset(get_offset() - _last_offset)
+		emit_signal("shake_over")
 
 # Kick off a new screenshake effect.
 func shake(duration, frequency, amplitude):

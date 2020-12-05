@@ -19,14 +19,17 @@ func _on_Dog_try_chomp():
 	$LoseTimer.stop()
 	$HUD.set_timer_enabled(false)
 	$LadyAndBG.set_process(false)
+	$ZoomSound.play()
 	$Dog.did_win = not $LadyAndBG.is_looking()
 	$DogCloseUp.current = true
 	
 	
 func  _on_Dog_try_chomp_finish(did_win):
+	$BGMusic.stop()
 	if did_win:
 		$AnimationPlayer.play("win")
 		$Dog.on_win()
+		$WinSound.play()
 	else:
 		$AnimationPlayer.play("lose")
 		$LadyAndBG.on_catch_dog()

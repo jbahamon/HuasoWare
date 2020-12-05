@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/microgames/thiefdog/ThiefDog.gd" type="Script" id=1]
 [ext_resource path="res://scenes/microgames/thiefdog/LadyAndBg.tscn" type="PackedScene" id=2]
@@ -6,10 +6,12 @@
 [ext_resource path="res://assets/thiefdog/bg/bbq.png" type="Texture" id=4]
 [ext_resource path="res://assets/thiefdog/bg/empanada.png" type="Texture" id=5]
 [ext_resource path="res://scenes/microgames/thiefdog/Dog.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/top/bg.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/thiefdog/bg.ogg" type="AudioStream" id=7]
 [ext_resource path="res://scenes/microgames/thiefdog/DogBG.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/microgames/thiefdog/LadyCloseUp.gd" type="Script" id=9]
 [ext_resource path="res://assets/thiefdog/dog/superbg.png" type="Texture" id=10]
+[ext_resource path="res://assets/thiefdog/win.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/thiefdog/zoom.wav" type="AudioStream" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "default"
@@ -204,6 +206,7 @@ position = Vector2( -160, -120 )
 
 [node name="Dog" parent="." instance=ExtResource( 6 )]
 position = Vector2( 552.582, 360.599 )
+z_index = 1
 
 [node name="LoseTimer" type="Timer" parent="."]
 wait_time = 10.0
@@ -216,12 +219,20 @@ stream = ExtResource( 7 )
 volume_db = -10.0
 autoplay = true
 
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -10.0
+
+[node name="ZoomSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
 [node name="Bbq" type="Sprite" parent="."]
 position = Vector2( -6.9438, 377 )
 texture = ExtResource( 4 )
 centered = false
 
 [node name="Empanada" type="Sprite" parent="."]
+visible = false
 position = Vector2( 432.629, 442.202 )
 texture = ExtResource( 5 )
 
@@ -233,9 +244,10 @@ autoplay = "default"
 anims/default = SubResource( 1 )
 anims/lose = SubResource( 2 )
 anims/win = SubResource( 3 )
-[connection signal="try_chomp" from="Dog" to="DogCloseUp/BG" method="_on_Dog_try_chomp"]
+[connection signal="shake_over" from="LadyCloseUp" to="DogCloseUp/BG" method="_on_LadyCloseUp_shake_over"]
 [connection signal="try_chomp" from="Dog" to="." method="_on_Dog_try_chomp"]
-[connection signal="try_chomp_finish" from="Dog" to="DogCloseUp/BG" method="_on_Dog_try_chomp_finish"]
+[connection signal="try_chomp" from="Dog" to="DogCloseUp/BG" method="_on_Dog_try_chomp"]
 [connection signal="try_chomp_finish" from="Dog" to="." method="_on_Dog_try_chomp_finish"]
+[connection signal="try_chomp_finish" from="Dog" to="DogCloseUp/BG" method="_on_Dog_try_chomp_finish"]
 [connection signal="timeout" from="LoseTimer" to="." method="_on_LoseTimer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
