@@ -4,6 +4,7 @@ var games = [
 	load("res://scenes/microgames/bellnstick/BellNStickMain.tscn"),
 	load("res://scenes/microgames/top/TopMain.tscn"),
 	load("res://scenes/microgames/kite/KiteMain.tscn"),
+	load("res://scenes/microgames/thiefdog/ThiefDog.tscn"),
 ]
 
 var score = 0

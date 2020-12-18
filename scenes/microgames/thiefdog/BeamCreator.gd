@@ -16,7 +16,7 @@ func _ready():
 func start_spawning():
 	set_process(true)
 	
-	for i in range(max_beams):
+	for _i in range(max_beams):
 		var beam = spawn_beam()
 		beam.position.x = rand_range(0, size.x)
 
@@ -32,7 +32,7 @@ func spawn_beam():
 	beam.scale = Vector2(scale, scale * 0.5)
 	beam.position = Vector2(-118 * scale, rand_range(0, size.y)) 
 	beam.velocity = Vector2(beam_velocity * scale, 0)
-	parent_node.add_child(beam)
+	parent_node.call_deferred("add_child", beam)
 	beam.connect("tree_exited", self, "on_beam_destroyed")
 	return beam
 

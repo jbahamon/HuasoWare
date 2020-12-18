@@ -2,7 +2,6 @@ extends Node2D
 signal try_chomp
 signal try_chomp_finish
 
-var did_win
 
 func _ready():
 	$Path2D/PathFollow2D.offset = 0.5
@@ -29,5 +28,9 @@ func _input(event):
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "try_chomp":
-		emit_signal("try_chomp_finish", did_win)
+		emit_signal("try_chomp_finish")
 		
+func freeze():
+	set_process(false)
+	set_process_input(false)
+	$AnimationPlayer.stop()

@@ -39,3 +39,7 @@ func on_catch_dog():
 	$AnimatedSprite.animation = "look"
 	$SpeechBubble.visible = false
 	$AngrySound.play()
+	
+func freeze():
+	set_process(false)
+	$AnimatedSprite.stop()

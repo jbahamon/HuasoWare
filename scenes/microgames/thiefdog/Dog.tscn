@@ -15,16 +15,6 @@ _data = {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "try_chomp",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "chomp",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "caught",
@@ -33,6 +23,16 @@ animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "waiting",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "chomp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "try_chomp",
 "speed": 5.0
 } ]
 
@@ -200,9 +200,9 @@ loop = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Path2D/PathFollow2D"]
 position = Vector2( -11.8796, 4.65166 )
 frames = SubResource( 2 )
-animation = "caught"
+animation = "try_chomp"
 playing = true
-offset = Vector2( 30, -10 )
+offset = Vector2( 50, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "waiting"
