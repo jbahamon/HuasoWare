@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bg.ogg-b02a5c20928efcdc3f7513e86a0e8e29.oggstr"
+
+[deps]
+
+source_file="res://assets/thief_dog/bg.ogg"
+dest_files=[ "res://.import/bg.ogg-b02a5c20928efcdc3f7513e86a0e8e29.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

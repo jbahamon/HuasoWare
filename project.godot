@@ -8,9 +8,56 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "State",
+"class": "FallState",
+"language": "GDScript",
+"path": "res://scenes/microgames/pudu_runner/FallState.gd"
+}, {
+"base": "State",
+"class": "IdleState",
+"language": "GDScript",
+"path": "res://scenes/microgames/pudu_runner/IdleState.gd"
+}, {
+"base": "State",
+"class": "JumpState",
+"language": "GDScript",
+"path": "res://scenes/microgames/pudu_runner/JumpState.gd"
+}, {
+"base": "State",
+"class": "LandState",
+"language": "GDScript",
+"path": "res://scenes/microgames/pudu_runner/LandState.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "PersistentState",
+"language": "GDScript",
+"path": "res://scenes/microgames/pudu_runner/Pudu.gd"
+}, {
+"base": "Node2D",
+"class": "State",
+"language": "GDScript",
+"path": "res://scenes/microgames/pudu_runner/State.gd"
+}, {
+"base": "Reference",
+"class": "StateFactory",
+"language": "GDScript",
+"path": "res://StateFactory.gd"
+}, {
+"base": "State",
+"class": "WalkState",
+"language": "GDScript",
+"path": "res://scenes/microgames/pudu_runner/WalkState.gd"
+} ]
 _global_script_class_icons={
-
+"FallState": "",
+"IdleState": "",
+"JumpState": "",
+"LandState": "",
+"PersistentState": "",
+"State": "",
+"StateFactory": "",
+"WalkState": ""
 }
 
 [application]
@@ -23,7 +70,7 @@ config/icon="res://icon.png"
 
 window/size/width=640
 window/size/height=480
-window/stretch/mode="viewport"
+window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
 [input]

@@ -1,10 +1,10 @@
 extends Node
 
 var games = [
-	load("res://scenes/microgames/bellnstick/BellNStickMain.tscn"),
+	# load("res://scenes/microgames/bellnstick/BellNStickMain.tscn"),
 	load("res://scenes/microgames/top/TopMain.tscn"),
-	load("res://scenes/microgames/kite/KiteMain.tscn"),
-	load("res://scenes/microgames/thiefdog/ThiefDog.tscn"),
+	#load("res://scenes/microgames/kite/KiteMain.tscn"),
+	# load("res://scenes/microgames/thiefdog/ThiefDog.tscn"),
 ]
 
 var score = 0
@@ -43,6 +43,7 @@ func _on_transition_finished(animation_name):
 			$AnimationPlayer.current_animation = "ui_in"
 			$AnimationPlayer.play()
 			$TransitionUI.visible = true
+			$Camera2D.current = true
 			$Camera2D.zoom = Vector2(0.1, 0.1)
 		"ui_in":
 			update_labels()

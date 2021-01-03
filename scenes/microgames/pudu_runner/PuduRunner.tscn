@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/microgames/pudu_runner/sections/section0.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/microgames/pudu_runner/Pudu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/pudu_runner/bg.png" type="Texture" id=3]
+[ext_resource path="res://scenes/microgames/pudu_runner/PuduRunner.gd" type="Script" id=4]
+
+[node name="PuduRunner" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Section" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 240 )
+
+[node name="Pudu" parent="." instance=ExtResource( 2 )]
+position = Vector2( 85.3288, 223.521 )
+
+[node name="Camera2D" type="Camera2D" parent="Pudu"]
+current = true
+limit_left = 0
+limit_smoothed = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.2, 0.2 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 640, 480 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 2.24492, 1.12247 )
+texture = ExtResource( 3 )
+centered = false

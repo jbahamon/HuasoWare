@@ -10,7 +10,6 @@
 [ext_resource path="res://assets/game_container/bg.ogg" type="AudioStream" id=8]
 
 [sub_resource type="AnimatedTexture" id=1]
-flags = 4
 frames = 4
 frame_0/texture = ExtResource( 7 )
 frame_1/texture = ExtResource( 4 )

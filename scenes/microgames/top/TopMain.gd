@@ -12,6 +12,7 @@ func _ready():
 	$HUD.set_timer_enabled(true)
 	update_arrows(ArrowState.NONE)
 
+	
 func _process(_delta):
 	$HUD.update_timer($WinTimer.time_left)
 	

@@ -1,0 +1,253 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scenes/microgames/thief_dog/ThiefDog.gd" type="Script" id=1]
+[ext_resource path="res://scenes/microgames/thief_dog/LadyAndBg.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/microgames/reusable/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/thief_dog/bg/bbq.png" type="Texture" id=4]
+[ext_resource path="res://assets/thief_dog/bg/empanada.png" type="Texture" id=5]
+[ext_resource path="res://scenes/microgames/thief_dog/Dog.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/thief_dog/bg.ogg" type="AudioStream" id=7]
+[ext_resource path="res://scenes/microgames/thief_dog/DogBG.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/microgames/thief_dog/LadyCloseUp.gd" type="Script" id=9]
+[ext_resource path="res://assets/thief_dog/dog/superbg.png" type="Texture" id=10]
+[ext_resource path="res://assets/thief_dog/win.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/thief_dog/zoom.wav" type="AudioStream" id=12]
+
+
+
+[sub_resource type="Animation" id=1]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Empanada:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dog:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("LadyCloseUp/FG:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MainCamera:current")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "lose"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("LadyCloseUp/FG:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("LadyCloseUp/FG:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("LadyAndBG:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.333333, 0.333333, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("LadyCloseUp:current")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("DogCloseUp:current")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Bbq:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.333333, 0.333333, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Empanada:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.333333, 0.333333, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Empanada:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dog:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[node name="ThiefDogMain" type="Node"]
+script = ExtResource( 1 )
+
+[node name="LadyAndBG" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -55 )
+
+[node name="LadyCloseUp" type="Camera2D" parent="."]
+position = Vector2( 335.139, 175.565 )
+zoom = Vector2( 0.5, 0.5 )
+script = ExtResource( 9 )
+
+[node name="FG" type="Sprite" parent="LadyCloseUp"]
+texture = ExtResource( 10 )
+
+[node name="DogCloseUp" type="Camera2D" parent="."]
+position = Vector2( 548.629, 360.202 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_editor_description_": "1"
+}
+
+[node name="BG" parent="DogCloseUp" instance=ExtResource( 8 )]
+visible = false
+position = Vector2( -160, -120 )
+
+[node name="Dog" parent="." instance=ExtResource( 6 )]
+position = Vector2( 552.582, 360.599 )
+
+[node name="LoseTimer" type="Timer" parent="."]
+wait_time = 50.0
+one_shot = true
+autostart = true
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -10.0
+autoplay = true
+
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -10.0
+
+[node name="ZoomSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="Bbq" type="Sprite" parent="."]
+position = Vector2( -6.9438, 377 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Empanada" type="Sprite" parent="."]
+position = Vector2( 432.629, 442.202 )
+texture = ExtResource( 5 )
+
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2( 320, 240 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+anims/default = SubResource( 1 )
+anims/lose = SubResource( 2 )
+anims/win = SubResource( 3 )
+[connection signal="shake_over" from="LadyCloseUp" to="DogCloseUp/BG" method="_on_LadyCloseUp_shake_over"]
+[connection signal="try_chomp" from="Dog" to="." method="_on_Dog_try_chomp"]
+[connection signal="try_chomp_finish" from="Dog" to="." method="_on_Dog_try_chomp_finish"]
+[connection signal="timeout" from="LoseTimer" to="." method="_on_LoseTimer_timeout"]
+[connection signal="message_over" from="HUD" to="." method="_on_HUD_message_over"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

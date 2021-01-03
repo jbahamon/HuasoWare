@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/microgames/thief_dog/BeamCreator.gd" type="Script" id=1]
+
+
+[node name="BeamCreator" type="Node2D"]
+script = ExtResource( 1 )
+beam_velocity = 2500.0
+parent_node_path = NodePath(".")
+max_beams = 40
