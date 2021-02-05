@@ -1,6 +1,6 @@
 extends Node2D
 
-var BeamEffect = preload("res://scenes/microgames/thiefdog/BeamEffect.tscn")
+var BeamEffect = preload("res://scenes/microgames/thief_dog/BeamEffect.tscn")
 var n_beams = 0
 
 export (float) var beam_velocity = 20

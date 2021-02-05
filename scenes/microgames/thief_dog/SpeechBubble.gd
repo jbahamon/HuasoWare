@@ -1,24 +1,24 @@
 extends Sprite
 
 var talking_images = [
-	preload("res://assets/thiefdog/speech/talk1.png"),
-	preload("res://assets/thiefdog/speech/talk2.png"),
-	preload("res://assets/thiefdog/speech/talk3.png"),
-	preload("res://assets/thiefdog/speech/talk4.png"),
-	preload("res://assets/thiefdog/speech/talk5.png"),
-	preload("res://assets/thiefdog/speech/talk6.png"),
-	preload("res://assets/thiefdog/speech/talk7.png"),
-	preload("res://assets/thiefdog/speech/talk8.png"),
-	preload("res://assets/thiefdog/speech/talk9.png"),
-	preload("res://assets/thiefdog/speech/talk10.png"),
-	preload("res://assets/thiefdog/speech/talk11.png"),
-	preload("res://assets/thiefdog/speech/talk12.png"),
-	preload("res://assets/thiefdog/speech/talk13.png"),
-	preload("res://assets/thiefdog/speech/talk14.png"),
+	preload("res://assets/thief_dog/speech/talk1.png"),
+	preload("res://assets/thief_dog/speech/talk2.png"),
+	preload("res://assets/thief_dog/speech/talk3.png"),
+	preload("res://assets/thief_dog/speech/talk4.png"),
+	preload("res://assets/thief_dog/speech/talk5.png"),
+	preload("res://assets/thief_dog/speech/talk6.png"),
+	preload("res://assets/thief_dog/speech/talk7.png"),
+	preload("res://assets/thief_dog/speech/talk8.png"),
+	preload("res://assets/thief_dog/speech/talk9.png"),
+	preload("res://assets/thief_dog/speech/talk10.png"),
+	preload("res://assets/thief_dog/speech/talk11.png"),
+	preload("res://assets/thief_dog/speech/talk12.png"),
+	preload("res://assets/thief_dog/speech/talk13.png"),
+	preload("res://assets/thief_dog/speech/talk14.png"),
 ]
 
-var dots = preload("res://assets/thiefdog/speech/dots.png")
-var question_mark = preload("res://assets/thiefdog/speech/question.png")
+var dots = preload("res://assets/thief_dog/speech/dots.png")
+var question_mark = preload("res://assets/thief_dog/speech/question.png")
 
 
 func _ready():
