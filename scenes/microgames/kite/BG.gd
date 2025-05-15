@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var bgs = [$Sprite, $Sprite2, $Sprite3]
+@onready var bgs = [$Sprite2D, $Sprite2, $Sprite3]
 
 func _process(delta):
 	for bg in bgs:

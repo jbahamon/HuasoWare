@@ -1,55 +1,141 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=25 format=3 uid="uid://crfixvjqvtl8n"]
 
-[ext_resource path="res://assets/thief_dog/bg/bg2.png" type="Texture" id=1]
-[ext_resource path="res://assets/thief_dog/bg/bg3.png" type="Texture" id=2]
-[ext_resource path="res://assets/thief_dog/bg/bg1.png" type="Texture" id=3]
-[ext_resource path="res://scenes/microgames/thief_dog/LadyAndBg.gd" type="Script" id=4]
-[ext_resource path="res://scenes/microgames/thief_dog/SpeechBubble.gd" type="Script" id=5]
-[ext_resource path="res://assets/thief_dog/speech/bubble.png" type="Texture" id=6]
-[ext_resource path="res://assets/thief_dog/speech/question.png" type="Texture" id=7]
-[ext_resource path="res://assets/thief_dog/alarm.ogg" type="AudioStream" id=8]
+[ext_resource type="Texture2D" uid="uid://tsblnle3mtrj" path="res://scenes/microgames/thief_dog/assets/bg/bg2.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bd1au38ww0oh7" path="res://scenes/microgames/thief_dog/assets/bg/bg3.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://djlq4grng5wyw" path="res://scenes/microgames/thief_dog/assets/bg/bg1.png" id="3"]
+[ext_resource type="Script" uid="uid://co1o8cydygyl2" path="res://scenes/microgames/thief_dog/LadyAndBg.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://bxwayt7wseqqh" path="res://scenes/microgames/thief_dog/assets/speech/bubble.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://b4o3vn5bgpo4p" path="res://scenes/microgames/thief_dog/assets/speech/question.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bhkynm7eluui6" path="res://scenes/microgames/thief_dog/assets/speech/talk1.png" id="7_hsh77"]
+[ext_resource type="AudioStream" uid="uid://dfs8xuasaeebf" path="res://scenes/microgames/thief_dog/assets/alarm.ogg" id="8"]
+[ext_resource type="Texture2D" uid="uid://mun31b6osjwa" path="res://scenes/microgames/thief_dog/assets/speech/talk2.png" id="8_110q0"]
+[ext_resource type="Texture2D" uid="uid://cafubjb7hnxl4" path="res://scenes/microgames/thief_dog/assets/speech/talk3.png" id="9_ivo8h"]
+[ext_resource type="Texture2D" uid="uid://cx6kg748enxqf" path="res://scenes/microgames/thief_dog/assets/speech/talk4.png" id="10_nv82b"]
+[ext_resource type="Texture2D" uid="uid://dyqtgxjnpindr" path="res://scenes/microgames/thief_dog/assets/speech/talk5.png" id="11_t437f"]
+[ext_resource type="Texture2D" uid="uid://cysn68sotf2h2" path="res://scenes/microgames/thief_dog/assets/speech/talk6.png" id="12_f8yxa"]
+[ext_resource type="Texture2D" uid="uid://oickbyd0iq4" path="res://scenes/microgames/thief_dog/assets/speech/talk7.png" id="13_5k5rr"]
+[ext_resource type="Texture2D" uid="uid://cydiouft8gqyk" path="res://scenes/microgames/thief_dog/assets/speech/talk8.png" id="14_ocuka"]
+[ext_resource type="Texture2D" uid="uid://bj4ufl6yefsb1" path="res://scenes/microgames/thief_dog/assets/speech/talk9.png" id="15_yxmw5"]
+[ext_resource type="Texture2D" uid="uid://bk7dpje7v4yia" path="res://scenes/microgames/thief_dog/assets/speech/talk10.png" id="16_j4w4e"]
+[ext_resource type="Texture2D" uid="uid://c7e8m5bcmok4f" path="res://scenes/microgames/thief_dog/assets/speech/talk11.png" id="17_0dr6b"]
+[ext_resource type="Texture2D" uid="uid://coqijduu10sq6" path="res://scenes/microgames/thief_dog/assets/speech/talk12.png" id="18_wwmml"]
+[ext_resource type="Texture2D" uid="uid://dwb41oi7hd64s" path="res://scenes/microgames/thief_dog/assets/speech/talk13.png" id="19_8lwh2"]
+[ext_resource type="Texture2D" uid="uid://bowhlcox11dcv" path="res://scenes/microgames/thief_dog/assets/speech/talk14.png" id="20_j7xl3"]
+[ext_resource type="Texture2D" uid="uid://ct7yj3mll863i" path="res://scenes/microgames/thief_dog/assets/speech/dots.png" id="21_ivo8h"]
 
-
-
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 1 ) ],
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}],
 "loop": true,
-"name": "doubt",
+"name": &"doubt",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}],
 "loop": true,
-"name": "look",
+"name": &"look",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1")
+}],
 "loop": true,
-"name": "talk",
+"name": &"talk",
 "speed": 5.0
-} ]
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8twvb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hsh77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_110q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ivo8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nv82b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_t437f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_f8yxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5k5rr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ocuka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yxmw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_j4w4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0dr6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_wwmml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8lwh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_j7xl3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_ivo8h")
+}],
+"loop": true,
+"name": &"dots",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7")
+}],
+"loop": true,
+"name": &"question",
+"speed": 5.0
+}]
 
 [node name="LadyAndBg" type="Node2D"]
-script = ExtResource( 4 )
+script = ExtResource("4")
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
-animation = "look"
-playing = true
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("1")
+animation = &"talk"
 centered = false
 
-[node name="SpeechBubble" type="Sprite" parent="."]
-position = Vector2( 443.621, 241.632 )
-texture = ExtResource( 6 )
-script = ExtResource( 5 )
+[node name="SpeechBubble" type="Sprite2D" parent="."]
+position = Vector2(443.621, 241.632)
+texture = ExtResource("6")
 
-[node name="Timer" type="Timer" parent="SpeechBubble"]
-
-[node name="Sprite" type="Sprite" parent="SpeechBubble"]
-position = Vector2( 8.9668, -0.471954 )
-texture = ExtResource( 7 )
+[node name="Content" type="AnimatedSprite2D" parent="SpeechBubble"]
+position = Vector2(8.9668, -0.471954)
+sprite_frames = SubResource("SpriteFrames_8twvb")
+animation = &"question"
 
 [node name="AngrySound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource("8")
 volume_db = -10.0
-[connection signal="timeout" from="SpeechBubble/Timer" to="SpeechBubble" method="on_timeout"]

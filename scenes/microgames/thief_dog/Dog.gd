@@ -4,10 +4,10 @@ signal try_chomp_finish
 
 
 func _ready():
-	$Path2D/PathFollow2D.offset = 0.5
+	$Path2D/PathFollow2D.progress_ratio = 0.5
 	
-func try_chomp():
-	$Path2D/PathFollow2D.offset = 0.5
+func on_try_chomp():
+	$Path2D/PathFollow2D.progress_ratio = 0.5
 	$AnimationPlayer.play("try_chomp")
 	emit_signal("try_chomp")
 
@@ -18,12 +18,11 @@ func on_win():
 	
 func on_lose():
 	$AnimationPlayer.play("caught")
-	
-	
+
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		set_process_input(false)
-		try_chomp()
+		on_try_chomp()
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):

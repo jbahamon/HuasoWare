@@ -24,7 +24,7 @@ func _flip_direction():
 	animated_sprite.flip_h = not animated_sprite.flip_h
 	animation_player.play("turn")
 	set_process_unhandled_input(false)
-	yield(animation_player, "animation_finished")
+	await animation_player.animation_finished
 	set_process_unhandled_input(true)
 	
 	change_state("walk")

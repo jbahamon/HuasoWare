@@ -5,12 +5,15 @@ class_name State
 var gravity = 15
 var _change_state: FuncRef
 var animation_player: AnimationPlayer
-var animated_sprite: AnimatedSprite
-var kinematic_body: KinematicBody2D
+var animated_sprite: AnimatedSprite2D
+var kinematic_body: CharacterBody2D
 
 # Writing _delta instead of delta here prevents the unused variable warning.
 func _physics_process(_delta):
-	kinematic_body.move_and_slide(kinematic_body.velocity, Vector2.UP)
+	kinematic_body.set_velocity(kinematic_body.velocity)
+	kinematic_body.set_up_direction(Vector2.UP)
+	kinematic_body.move_and_slide()
+	kinematic_body.velocity
 
 func setup(change_state, animation_player, animated_sprite, kinematic_body):
 	self._change_state = change_state

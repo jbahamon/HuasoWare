@@ -3,14 +3,14 @@ extends Area2D
 signal finished
 signal hit
 
-export var max_speed = 300.0
-export var acceleration = 2200.0
-export var margin = 0.1
+@export var max_speed = 300.0
+@export var acceleration = 2200.0
+@export var margin = 0.1
 
 
 var current_velocity = Vector2(0, 0)
 var disable_controls := false
-onready var screen_size = get_viewport_rect().size
+@onready var screen_size = get_viewport_rect().size
 
 
 func _process(delta):
@@ -34,7 +34,7 @@ func _process(delta):
 	if acceleration_direction.length() > 0:
 		acceleration_direction = acceleration_direction.normalized()
 		current_velocity += acceleration_direction * delta * acceleration
-		current_velocity = current_velocity.clamped(max_speed)
+		current_velocity = current_velocity.limit_length(max_speed)
 	elif current_velocity.length() > acceleration:
 		current_velocity += - current_velocity.normalized() * delta * acceleration
 	elif current_velocity.length() > 0:
@@ -64,7 +64,7 @@ func _process(delta):
 func _on_KitePlayer_body_entered(_body):
 	get_sad()
 	disable_controls = true
-	emit_signal("hit")
+	hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)
 
 func get_sad():
@@ -72,9 +72,7 @@ func get_sad():
 
 func move_to_center():
 	disable_controls = true
-	$Tween.interpolate_property(self, "position", position, Vector2(300, 160), 
-			2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	$Tween.start()
-	
-func _on_moved_to_center(_object, _key):
-	emit_signal("finished")
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", Vector2(300, 160), 2)
+	await tween.finished
+	finished.emit()

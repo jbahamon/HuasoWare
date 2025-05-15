@@ -9,6 +9,7 @@ signal game_over
 
 
 func _ready():
+	$MainCamera.make_current()
 	$DogCloseUp.position = $Dog.position
 
 
@@ -23,7 +24,7 @@ func _on_Dog_try_chomp():
 	$LadyAndBG.freeze()
 	$ZoomSound.play()
 	$DogCloseUp/BG.enable_beams()
-	$DogCloseUp.current = true
+	$DogCloseUp.make_current()
 	
 	
 func  _on_Dog_try_chomp_finish():
@@ -37,7 +38,10 @@ func  _on_Dog_try_chomp_finish():
 		$DogCloseUp/BG.disable()
 		$AnimationPlayer.play("lose")
 		$LadyAndBG.on_catch_dog()
+		$LadyCloseUp.make_current()
 		$LadyCloseUp.shake(2, 120, 20)
+		await $LadyCloseUp.shake_over
+		$DogCloseUp.make_current()
 		$Dog.on_lose()
 
 

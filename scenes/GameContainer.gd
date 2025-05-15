@@ -11,9 +11,9 @@ var score = 0
 var lives = 4
 var current_game = null
 
-onready var score_label = $TransitionUI/VBoxContainer/Score
-onready var lives_label = $TransitionUI/VBoxContainer/Lives
-onready var next_game_label = $TransitionUI/VBoxContainer/ReferenceRect/ColorRect/NextGameLabel
+@onready var score_label = $TransitionUI/VBoxContainer/Score
+@onready var lives_label = $TransitionUI/VBoxContainer/Lives
+@onready var next_game_label = $TransitionUI/VBoxContainer/ReferenceRect/ColorRect/NextGameLabel
 
 func _ready():
 	update_labels()
@@ -31,7 +31,7 @@ func _on_transition_finished(animation_name):
 		"ui_out":
 			$TransitionUI.visible = false
 			$Camera2D.zoom = Vector2(1, 1)
-			$BGSong.stop()
+			$BGSong.set_stream_paused(true)
 			instance_game()
 		"game_in":
 			start_game()
@@ -43,14 +43,14 @@ func _on_transition_finished(animation_name):
 			$AnimationPlayer.current_animation = "ui_in"
 			$AnimationPlayer.play()
 			$TransitionUI.visible = true
-			$Camera2D.current = true
+			$Camera2D.enabled = true
 			$Camera2D.zoom = Vector2(0.1, 0.1)
 		"ui_in":
 			update_labels()
 			if lives > 0:
-				$BGSong.play()
+				$BGSong.set_stream_paused(false)
 				$NextGameTimer.start()
-				next_game_label.set("custom_colors/font_color", Color(1,1,1))
+				next_game_label.set("theme_override_colors/font_color", Color(1,1,1))
 			else:
 				$CanvasLayer/GameOverUI/GameOverLabel.text = "GAME OVER\nFINAL SCORE: %d" % score
 				$AnimationPlayer.current_animation = "game_over"
@@ -59,7 +59,7 @@ func _on_transition_finished(animation_name):
 			$CanvasLayer/GameOverUI/HBoxContainer/TryAgainButton.grab_focus()
 
 func instance_game():
-	current_game = games[randi() % games.size()].instance()
+	current_game = games[randi() % games.size()].instantiate()
 	add_child(current_game)
 	
 	current_game.set_process(false)
@@ -70,19 +70,19 @@ func instance_game():
 	$AnimationPlayer.play()
 	
 func start_game():
-	current_game.connect("game_over", self, "_on_game_over")
+	current_game.connect("game_over", Callable(self, "_on_game_over"))
 	current_game.set_process(true)
 	current_game.set_physics_process(true)
 	current_game.set_process_input(true)
 
 func _on_game_over(game_won):
-	current_game.disconnect("game_over", self, "_on_game_over")
+	current_game.disconnect("game_over", Callable(self, "_on_game_over"))
 	current_game.set_process(false)
 	current_game.set_physics_process(false)
 	current_game.set_process_input(false)
 	$AnimationPlayer.current_animation = 'game_out'
 	$AnimationPlayer.play()
-	yield($AnimationPlayer, "animation_finished")
+	await $AnimationPlayer.animation_finished
 	
 	if game_won:
 		score += 1
@@ -91,11 +91,11 @@ func _on_game_over(game_won):
 
 
 func _on_TryAgainButton_pressed():
-	get_tree().change_scene("res://scenes/GameContainer.tscn")
+	get_tree().change_scene_to_file("res://scenes/GameContainer.tscn")
 
 
 func _on_QuitButton_pressed():
-	get_tree().change_scene("res://scenes/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
 
 func update_labels():
 	score_label.text ="SCORE: %d" % score

@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/kite/Enemies/tree0.png" type="Texture" id=1]
-[ext_resource path="res://assets/kite/Enemies/tree2.png" type="Texture" id=2]
-[ext_resource path="res://assets/kite/Enemies/tree3.png" type="Texture" id=3]
-[ext_resource path="res://assets/kite/Enemies/tree1.png" type="Texture" id=4]
-[ext_resource path="res://scenes/microgames/kite/Enemies/TreeEnemy.gd" type="Script" id=5]
+[ext_resource type="Texture2D" uid="uid://mj0kfoqomcd6" path="res://scenes/microgames/kite/assets/Enemies/tree0.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://n4ys2fjr13kt" path="res://scenes/microgames/kite/assets/Enemies/tree2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b8o2b7cu6j47x" path="res://scenes/microgames/kite/assets/Enemies/tree3.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://r8qbuwq066ag" path="res://scenes/microgames/kite/assets/Enemies/tree1.png" id="4"]
+[ext_resource type="Script" uid="uid://d35xeatrkvvyt" path="res://scenes/microgames/kite/Enemies/TreeEnemy.gd" id="5"]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -21,7 +21,7 @@ height = 14.0306
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8.99182, 71.9964 )
 
-[node name="Tree" type="KinematicBody2D" groups=[
+[node name="Tree" type="CharacterBody2D" groups=[
 "enemies",
 ]]
 position = Vector2( 606.141, 344.06 )
@@ -31,7 +31,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2( 0, -120 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
@@ -47,8 +47,8 @@ shape = SubResource( 2 )
 position = Vector2( 0, -69.461 )
 shape = SubResource( 3 )
 
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2( 0.374573, 20.2272 )
 scale = Vector2( 5.08288, 3.77187 )
 rect = Rect2( -10, -60, 20, 20 )
-[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]

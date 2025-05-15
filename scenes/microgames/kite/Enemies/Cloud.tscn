@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/kite/Enemies/ecloud1.png" type="Texture" id=1]
-[ext_resource path="res://assets/kite/Enemies/cloud0.png" type="Texture" id=2]
-[ext_resource path="res://assets/kite/Enemies/cloud1.png" type="Texture" id=3]
-[ext_resource path="res://assets/kite/Enemies/cloud2.png" type="Texture" id=4]
-[ext_resource path="res://assets/kite/Enemies/ecloud0.png" type="Texture" id=5]
-[ext_resource path="res://assets/kite/Enemies/ecloud2.png" type="Texture" id=6]
-[ext_resource path="res://scenes/microgames/kite/Enemies/Cloud.gd" type="Script" id=7]
+[ext_resource type="Texture2D" uid="uid://d1kh02jkmk0o" path="res://scenes/microgames/kite/assets/Enemies/ecloud1.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://18u8xmrp1b4u" path="res://scenes/microgames/kite/assets/Enemies/cloud0.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://e4x35ov55xiq" path="res://scenes/microgames/kite/assets/Enemies/cloud1.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://d1kad82jstn7a" path="res://scenes/microgames/kite/assets/Enemies/cloud2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://28ueln4tbdsn" path="res://scenes/microgames/kite/assets/Enemies/ecloud0.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://djmy532qjnrya" path="res://scenes/microgames/kite/assets/Enemies/ecloud2.png" id="6"]
+[ext_resource type="Script" uid="uid://cjcpaciyhs2pt" path="res://scenes/microgames/kite/Enemies/Cloud.gd" id="7"]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -20,7 +20,7 @@ animations = [ {
 radius = 23.6484
 height = 19.0845
 
-[node name="Node2D" type="KinematicBody2D" groups=[
+[node name="Node2D" type="CharacterBody2D" groups=[
 "enemies",
 ]]
 script = ExtResource( 7 )
@@ -28,7 +28,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2( 4.62492, 0 )
 frames = SubResource( 1 )
 frame = 5
@@ -38,6 +38,6 @@ playing = true
 rotation = 1.5708
 shape = SubResource( 2 )
 
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2( 3.98518, 2.87099 )
-[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]

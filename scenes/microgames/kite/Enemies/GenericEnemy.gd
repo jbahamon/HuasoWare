@@ -1,7 +1,7 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-func init(params):
+func init(_params):
 	pass
 
 func set_frame(i):
-	$AnimatedSprite.set_frame(i)
+	$AnimatedSprite2D.set_frame(i)

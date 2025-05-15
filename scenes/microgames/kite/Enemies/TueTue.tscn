@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/kite/Enemies/tuetue2.png" type="Texture" id=1]
-[ext_resource path="res://assets/kite/Enemies/tuetue0.png" type="Texture" id=2]
-[ext_resource path="res://assets/kite/Enemies/tuetue1.png" type="Texture" id=3]
-[ext_resource path="res://scenes/microgames/kite/Enemies/TueTue.gd" type="Script" id=4]
-[ext_resource path="res://scenes/microgames/kite/Enemies/TueTueBullet.tscn" type="PackedScene" id=5]
+[ext_resource type="Texture2D" uid="uid://b5ydymhwgjijj" path="res://scenes/microgames/kite/assets/Enemies/tuetue2.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://ceu6qq12wq4h1" path="res://scenes/microgames/kite/assets/Enemies/tuetue0.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cnyc8kd12qimt" path="res://scenes/microgames/kite/assets/Enemies/tuetue1.png" id="3"]
+[ext_resource type="Script" uid="uid://d0waugmoy8x6u" path="res://scenes/microgames/kite/Enemies/TueTue.gd" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/microgames/kite/Enemies/TueTueBullet.tscn" id="5"]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -17,7 +17,7 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 radius = 11.2219
 
-[node name="TueTue" type="KinematicBody2D" groups=[
+[node name="TueTue" type="CharacterBody2D" groups=[
 "enemies",
 ]]
 position = Vector2( 412.502, 209.564 )
@@ -29,7 +29,7 @@ __meta__ = {
 }
 TueTueBullet = ExtResource( 5 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2( 3.448, -1.324 )
 frames = SubResource( 1 )
 playing = true

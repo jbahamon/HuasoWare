@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/kite/Enemies/tuetueproj1.png" type="Texture" id=1]
-[ext_resource path="res://assets/kite/Enemies/tuetueproj0.png" type="Texture" id=2]
-[ext_resource path="res://assets/kite/Enemies/tuetueproj3.png" type="Texture" id=3]
-[ext_resource path="res://assets/kite/Enemies/tuetueproj2.png" type="Texture" id=4]
+[ext_resource type="Texture2D" uid="uid://bs357rmlt7foo" path="res://scenes/microgames/kite/assets/Enemies/tuetueproj1.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://b5s2qu57def8a" path="res://scenes/microgames/kite/assets/Enemies/tuetueproj0.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://chuhg82wg0w24" path="res://scenes/microgames/kite/assets/Enemies/tuetueproj3.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cwjxvrsf0g7p2" path="res://scenes/microgames/kite/assets/Enemies/tuetueproj2.png" id="4"]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -16,9 +16,9 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 radius = 23.5358
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 frame = 1

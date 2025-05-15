@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://58yg2fipqwlw"
+path="res://.godot/imported/Sneaky Steps.ogg-cdcdfbea695873e1c25d7d3137a4f1c8.oggvorbisstr"
+
+[deps]
+
+source_file="res://scenes/microgames/thief_dog/assets/Sneaky Steps.ogg"
+dest_files=["res://.godot/imported/Sneaky Steps.ogg-cdcdfbea695873e1c25d7d3137a4f1c8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,10 +1,10 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 signal top_fell
-export (float) var input_speed = 1
-export (float) var gravity_magnitude = 4.0
-export (float) var horizontal_amplitude = 60
-export (float) var horizontal_period = 4.0
+@export var input_speed: float = 1
+@export var gravity_magnitude: float = 4.0
+@export var horizontal_amplitude: float = 60
+@export var horizontal_period: float = 4.0
 
 var input_velocity = 0
 var angular_velocity = 0
@@ -28,7 +28,8 @@ func _input(event):
 func _physics_process(delta):
 	time += delta
 	
-	var gravity = get_gravity()
+	var grav_scale = sign(rotation) * pow(abs(rotation) / PI, 0.3)
+	var gravity = grav_scale * gravity_magnitude
 	
 	angular_velocity += input_velocity
 	input_velocity = 0.0
@@ -37,11 +38,11 @@ func _physics_process(delta):
 	rotation = fposmod(rotation + angular_velocity * delta + PI, 2 * PI) - PI
 	
 	var collision = move_and_collide(
-			Vector2(frequency * horizontal_amplitude * cos(frequency * time) * delta, 0)
+		Vector2(frequency * horizontal_amplitude * cos(frequency * time) * delta, 0)
 	)
 	
 	if collision:
-		$AnimatedSprite.animation = 'stopped'
+		$AnimatedSprite2D.animation = 'stopped'
 		$FallSound.play()
 		emit_signal("top_fell")
 
@@ -49,7 +50,3 @@ func _physics_process(delta):
 func _on_game_ended():
 	set_process_input(false)
 	set_physics_process(false)
-
-func get_gravity():
-	var scale = sign(rotation) * pow(abs(rotation) / PI, 0.3)
-	return scale * gravity_magnitude

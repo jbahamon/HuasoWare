@@ -1,0 +1,8 @@
+TextureRect
+Label
+VBoxContainer
+Control
+ScrollContainer
+MarginContainer
+RichTextLabel
+AnimatedSprite2D

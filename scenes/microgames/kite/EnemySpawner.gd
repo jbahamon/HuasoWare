@@ -17,7 +17,7 @@ func stop():
 func spawn_enemies(spawning_layout):
 	var time = 0
 	for spawning_group in spawning_layout:
-		yield(get_tree().create_timer(spawning_group.timestamp - time), "timeout")
+		await get_tree().create_timer(spawning_group.timestamp - time).timeout
 		
 		if stopped:
 			return
@@ -25,7 +25,7 @@ func spawn_enemies(spawning_layout):
 		time = spawning_group.timestamp
 		
 		for element in spawning_group.elements:
-			var instance = spawning_group.type.instance()
+			var instance = spawning_group.type.instantiate()
 			
 			var frame = element.get("frame", 0)
 			instance.set_frame(frame)	
@@ -35,7 +35,7 @@ func spawn_enemies(spawning_layout):
 			
 			add_child(instance)
 			
-	yield(get_tree().create_timer(5), "timeout")
+	await get_tree().create_timer(5).timeout
 	if not stopped:
 		emit_signal("no_more_enemies")
 

@@ -2,9 +2,9 @@ extends Area2D
 
 signal hit
 
-export var speed = 200
-export var left_margin = 0.1
-export var right_margin = 0.1
+@export var speed = 200
+@export var left_margin = 0.1
+@export var right_margin = 0.1
 
 var disable_controls := false
 var screen_size
@@ -33,7 +33,6 @@ func _process(delta):
 
 func _on_Stick_body_entered(_body):
 	emit_signal("hit")
-
 
 func enable():
 	$AnimationPlayer.play("arrows_fade_in")

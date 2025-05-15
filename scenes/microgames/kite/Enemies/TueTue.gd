@@ -1,5 +1,5 @@
 extends "GenericEnemy.gd"
-export (PackedScene) var TueTueBullet
+@export var TueTueBullet: PackedScene
 
 enum State {POSITIONING, PRE_SHOOTING, POST_SHOOTING, CHASING_PLAYER}
 
@@ -18,7 +18,7 @@ var chase_speed = 350
 var chase_direction
 
 func _on_VisibilityNotifier2D_screen_entered():
-	$VisibilityNotifier2D.connect("screen_exited", self, "_on_VisibilityNotifier2D_screen_exited")
+	$VisibleOnScreenNotifier2D.connect("screen_exited", Callable(self, "_on_VisibilityNotifier2D_screen_exited"))
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
@@ -37,7 +37,7 @@ func _physics_process(delta):
 			move_and_collide(Vector2.ZERO)
 			if accumulated_time >= pre_shooting_time:
 				self.accumulated_time = 0
-				add_child(TueTueBullet.instance())
+				add_child(TueTueBullet.instantiate())
 				current_state = State.POST_SHOOTING
 		State.POST_SHOOTING:
 			move_and_collide(Vector2.ZERO)

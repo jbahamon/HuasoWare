@@ -1,197 +1,192 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=3 uid="uid://bkoybs1xjo51q"]
 
-[ext_resource path="res://scenes/microgames/bellnstick/Stick.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/microgames/bellnstick/Bell.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/microgames/bellnstick/SwingAnimation.gd" type="Script" id=3]
-[ext_resource path="res://scenes/microgames/bellnstick/BellNStickMain.gd" type="Script" id=4]
-[ext_resource path="res://scenes/microgames/bellnstick/GameOverArea.gd" type="Script" id=5]
-[ext_resource path="res://scenes/microgames/reusable/HUD.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/microgames/bellnstick/WinBell.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/bellnstick/bg4.png" type="Texture" id=8]
-[ext_resource path="res://assets/bellnstick/bg3.png" type="Texture" id=9]
-[ext_resource path="res://assets/bellnstick/bg2.png" type="Texture" id=10]
-[ext_resource path="res://assets/bellnstick/bg1.png" type="Texture" id=11]
-[ext_resource path="res://assets/bellnstick/bg8.png" type="Texture" id=12]
-[ext_resource path="res://assets/bellnstick/bg7.png" type="Texture" id=13]
-[ext_resource path="res://assets/bellnstick/bg5.png" type="Texture" id=14]
-[ext_resource path="res://assets/bellnstick/bg6.png" type="Texture" id=15]
-[ext_resource path="res://assets/bellnstick/crash.wav" type="AudioStream" id=16]
-[ext_resource path="res://assets/bellnstick/hit.wav" type="AudioStream" id=17]
-[ext_resource path="res://assets/bellnstick/bg.ogg" type="AudioStream" id=18]
+[ext_resource type="PackedScene" path="res://scenes/microgames/bellnstick/Stick.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://cw0tf1smjc56k" path="res://scenes/microgames/bellnstick/Bell.tscn" id="2"]
+[ext_resource type="Script" uid="uid://butxmgmckvr0u" path="res://scenes/microgames/bellnstick/BellNStickMain.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://c6b5x1n135ph6" path="res://scenes/microgames/reusable/HUD.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/microgames/bellnstick/WinBell.tscn" id="7"]
+[ext_resource type="Texture2D" uid="uid://c752g8qv735c1" path="res://scenes/microgames/bellnstick/assets/bg4.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bctdy7xsgljom" path="res://scenes/microgames/bellnstick/assets/bg3.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dpwywm711ed0i" path="res://scenes/microgames/bellnstick/assets/bg2.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://u70hae2m3mvd" path="res://scenes/microgames/bellnstick/assets/bg1.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://2lajsswm1dms" path="res://scenes/microgames/bellnstick/assets/bg8.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://bfj83btaj3cq7" path="res://scenes/microgames/bellnstick/assets/bg7.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://b1s7jvy3g0uhk" path="res://scenes/microgames/bellnstick/assets/bg5.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://24e6teoibaxp" path="res://scenes/microgames/bellnstick/assets/bg6.png" id="15"]
+[ext_resource type="AudioStream" uid="uid://bg5bh1puhsay7" path="res://scenes/microgames/bellnstick/assets/crash.wav" id="16"]
+[ext_resource type="AudioStream" uid="uid://cngnh3tjctp1r" path="res://scenes/microgames/bellnstick/assets/hit.wav" id="17"]
+[ext_resource type="AudioStream" uid="uid://b5r4g7yb5sv1s" path="res://scenes/microgames/bellnstick/assets/Pop Party.ogg" id="18_m7gmd"]
 
-[sub_resource type="AnimatedTexture" id=1]
+[sub_resource type="AnimatedTexture" id="1"]
 frames = 4
-frame_0/texture = ExtResource( 11 )
-frame_1/texture = ExtResource( 10 )
-frame_1/delay_sec = 0.0
-frame_2/texture = ExtResource( 9 )
-frame_2/delay_sec = 0.0
-frame_3/texture = ExtResource( 8 )
-frame_3/delay_sec = 0.0
+frame_0/texture = ExtResource("11")
+frame_1/texture = ExtResource("10")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("9")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("8")
+frame_3/duration = 1.0
 
-[sub_resource type="AnimatedTexture" id=2]
-flags = 4
+[sub_resource type="AnimatedTexture" id="2"]
 frames = 4
-frame_0/texture = ExtResource( 14 )
-frame_1/texture = ExtResource( 15 )
-frame_1/delay_sec = 0.0
-frame_2/texture = ExtResource( 13 )
-frame_2/delay_sec = 0.0
-frame_3/texture = ExtResource( 12 )
-frame_3/delay_sec = 0.0
+frame_0/texture = ExtResource("14")
+frame_1/texture = ExtResource("15")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("13")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("12")
+frame_3/duration = 1.0
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id="3"]
 bake_interval = 2.0
 _data = {
-"points": PoolVector2Array( -97.6766, -323.16, 97.6766, 323.16, 76.5184, 310.687, -4.8503, 583.301, 4.8503, -583.301, 573.413, 13.0423 )
+"points": PackedVector2Array(-97.6766, -323.16, 97.6766, 323.16, 76.5184, 310.687, -4.8503, 583.301, 4.8503, -583.301, 573.413, 13.0423)
 }
+point_count = 2
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 416.106, 78.7833 )
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(832.212, 157.567)
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id="5"]
 length = 0.5
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Camera2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 320, 240 ), Vector2( 320, -50 ) ]
+"values": [Vector2(320, 240), Vector2(320, -50)]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id="6"]
 length = 0.5
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Camera2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 320, -50 ), Vector2( 320, 100 ) ]
+"values": [Vector2(320, -50), Vector2(320, 100)]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id="7"]
 length = 1.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("SwingPath/PathFollow2D:unit_offset")
-tracks/0/interp = 2
-tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
+tracks/0/path = NodePath("SwingPath/PathFollow2D:progress_ratio")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7, 1.5 ),
-"transitions": PoolRealArray( 1, 4.6, 0.4 ),
+"times": PackedFloat32Array(0, 0.7, 1.5),
+"transitions": PackedFloat32Array(1, 4.6, 0.4),
 "update": 0,
-"values": [ 0.5, 0.0, 1.0 ]
+"values": [0.5, 0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8qtg"]
+_data = {
+&"scroll": SubResource("5"),
+&"scroll_back": SubResource("6"),
+&"swing": SubResource("7")
 }
 
 [node name="EmboqueMain" type="Node"]
-script = ExtResource( 4 )
-WinBell = ExtResource( 7 )
+script = ExtResource("4")
+WinBell = ExtResource("7")
 
 [node name="NormalBG" type="TextureRect" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -432.0
-texture = SubResource( 1 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
+offset_top = -432.0
+texture = SubResource("1")
+stretch_mode = 1
 
 [node name="WinBG" type="TextureRect" parent="."]
 visible = false
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -432.0
-texture = SubResource( 2 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
+offset_top = -432.0
+texture = SubResource("2")
+stretch_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 320, 240 )
-current = true
+position = Vector2(320, 240)
 
-[node name="Stick" parent="." instance=ExtResource( 1 )]
-position = Vector2( 320, 170 )
-scale = Vector2( 1, 1 )
+[node name="Stick" parent="." instance=ExtResource("1")]
+position = Vector2(320, 170)
+scale = Vector2(1, 1)
 speed = 600
 
-[node name="Bell" parent="." instance=ExtResource( 2 )]
-position = Vector2( 436.097, 351.966 )
-rotation = -0.603546
-linear_damp = 0.0
-angular_damp = 0.0
+[node name="Bell" parent="." instance=ExtResource("2")]
+position = Vector2(434.904, 352.772)
+rotation = -0.590575
+scale = Vector2(1, 0.999999)
 
 [node name="SwingPath" type="Path2D" parent="."]
-position = Vector2( 33.3058, 53.7356 )
-scale = Vector2( 0.92498, 0.658333 )
-curve = SubResource( 3 )
+position = Vector2(33.3058, 53.7356)
+scale = Vector2(0.92498, 0.658333)
+curve = SubResource("3")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="SwingPath"]
-position = Vector2( 435.46, 453.009 )
-rotation = -0.769432
-offset = 475.322
+position = Vector2(434.169, 454.233)
+rotation = -0.755499
+progress = 474.387
 cubic_interp = false
 loop = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="SwingPath/PathFollow2D"]
 remote_path = NodePath("../../../Bell")
+update_rotation = false
 update_scale = false
 
 [node name="GameOverArea" type="Area2D" parent="."]
-position = Vector2( 320, 350 )
+position = Vector2(320, 350)
 collision_layer = 0
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameOverArea"]
-shape = SubResource( 4 )
+shape = SubResource("4")
 disabled = true
 
-[node name="HUD" parent="." instance=ExtResource( 6 )]
+[node name="HUD" parent="." instance=ExtResource("6")]
 
-[node name="GeneralAnimation" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_g8qtg")
+}
 autoplay = "swing"
-anims/scroll = SubResource( 5 )
-anims/scroll_back = SubResource( 6 )
-anims/swing = SubResource( 7 )
-script = ExtResource( 3 )
 
 [node name="WinSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 17 )
+stream = ExtResource("17")
 volume_db = -5.0
 
 [node name="LoseSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 16 )
+stream = ExtResource("16")
 volume_db = -10.0
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 18 )
+stream = ExtResource("18_m7gmd")
 volume_db = -10.0
 autoplay = true
+
 [connection signal="lose" from="." to="HUD" method="_on_lose"]
 [connection signal="win" from="." to="HUD" method="_on_win"]
 [connection signal="hit" from="Stick" to="." method="_on_Stick_hit"]
 [connection signal="hit" from="Stick" to="Bell" method="_on_Stick_hit"]
 [connection signal="body_entered" from="GameOverArea" to="." method="_on_GameOverArea_body_entered"]
-[connection signal="body_entered" from="GameOverArea" to="Bell" method="_on_GameOverArea_body_entered"]
 [connection signal="message_over" from="HUD" to="." method="_on_HUD_message_over"]
-[connection signal="animation_finished" from="GeneralAnimation" to="." method="_on_animation_finished"]
-[connection signal="animation_finished" from="GeneralAnimation" to="Bell" method="_on_AnimationPlayer_animation_finished"]
-[connection signal="animation_finished" from="GeneralAnimation" to="GameOverArea" method="_on_SwingAnimation_animation_finished"]
-[connection signal="animation_finished" from="GeneralAnimation" to="GeneralAnimation" method="_on_SwingAnimation_animation_finished"]
-[connection signal="animation_started" from="GeneralAnimation" to="Bell" method="_on_swing"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="Bell" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="GameOverArea" method="_on_SwingAnimation_animation_finished"]
+[connection signal="animation_started" from="AnimationPlayer" to="Bell" method="_on_swing"]

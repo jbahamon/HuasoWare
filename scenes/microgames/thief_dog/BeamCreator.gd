@@ -3,10 +3,10 @@ extends Node2D
 var BeamEffect = preload("res://scenes/microgames/thief_dog/BeamEffect.tscn")
 var n_beams = 0
 
-export (float) var beam_velocity = 20
-export (NodePath) var parent_node_path
-export (int, 100) var max_beams = 20
-export (Vector2) var size = Vector2(640, 480)
+@export var beam_velocity: float = 20
+@export var parent_node_path: NodePath
+@export var max_beams = 20
+@export var size: Vector2 = Vector2(640, 480)
 
 var parent_node
 func _ready():
@@ -18,7 +18,7 @@ func start_spawning():
 	
 	for _i in range(max_beams):
 		var beam = spawn_beam()
-		beam.position.x = rand_range(0, size.x)
+		beam.position.x = randf_range(0, size.x)
 
 
 func stop_spawning():
@@ -27,13 +27,13 @@ func stop_spawning():
 	
 	
 func spawn_beam():
-	var beam = BeamEffect.instance()
-	var scale = rand_range(0.4, 1)
-	beam.scale = Vector2(scale, scale * 0.5)
-	beam.position = Vector2(-118 * scale, rand_range(0, size.y)) 
-	beam.velocity = Vector2(beam_velocity * scale, 0)
+	var beam = BeamEffect.instantiate()
+	var beam_scale = randf_range(0.4, 1)
+	beam.scale = Vector2(beam_scale, beam_scale * 0.5)
+	beam.position = Vector2(-118 * beam_scale, randf_range(0, size.y)) 
+	beam.velocity = Vector2(beam_velocity * beam_scale, 0)
 	parent_node.call_deferred("add_child", beam)
-	beam.connect("tree_exited", self, "on_beam_destroyed")
+	beam.connect("tree_exited", Callable(self, "on_beam_destroyed"))
 	return beam
 
 

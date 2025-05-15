@@ -11,14 +11,14 @@ var all_sections = []
 func _ready():
 	camera = $Pudu/Camera2D
 	last_section = $Section
-	last_section.connect("visible", self, "_spawn_section", [], CONNECT_ONESHOT)
+	last_section.connect("visible", Callable(self, "_spawn_section").bind(), CONNECT_ONE_SHOT)
 	all_sections.append(last_section)
 
 func _spawn_section():
-	var new_section = sections[randi() % (sections.size())].instance()
+	var new_section = sections[randi() % (sections.size())].instantiate()
 	new_section.global_position = last_section.get_connector_position()
-	new_section.connect("visible", self, "_spawn_section", [], CONNECT_ONESHOT)
-	new_section.connect("entered_area", self, "update_camera_bounds")
+	new_section.connect("visible", Callable(self, "_spawn_section").bind(), CONNECT_ONE_SHOT)
+	new_section.connect("entered_area", Callable(self, "update_camera_bounds"))
 	
 	all_sections.append(new_section)
 	add_child(new_section)

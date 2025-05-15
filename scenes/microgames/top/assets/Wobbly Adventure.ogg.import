@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cu2h678iakqec"
+path="res://.godot/imported/Wobbly Adventure.ogg-3985c7e6164450cc96965dfade2a8c2a.oggvorbisstr"
+
+[deps]
+
+source_file="res://scenes/microgames/top/assets/Wobbly Adventure.ogg"
+dest_files=["res://.godot/imported/Wobbly Adventure.ogg-3985c7e6164450cc96965dfade2a8c2a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

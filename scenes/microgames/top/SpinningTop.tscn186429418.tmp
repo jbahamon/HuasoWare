@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://7n1fwwc3dd71"]
+
+[ext_resource type="Script" uid="uid://xkvfo7hywkyd" path="res://scenes/microgames/top/SpinningTop.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bujuetuljqqr8" path="res://assets/top/top3.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bua4kuhr3ggp4" path="res://assets/top/top2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://6iqvcvsf6m35" path="res://assets/top/top0.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://d3estq7cy8sfj" path="res://assets/top/top1.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://d8if1q2o5lyr" path="res://assets/top/stopped.png" id="6"]
+[ext_resource type="AudioStream" uid="uid://dx5e8od3prck4" path="res://assets/top/fall.wav" id="7"]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}],
+"loop": true,
+"name": &"spinning",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6")
+}],
+"loop": true,
+"name": &"stopped",
+"speed": 5.0
+}]
+
+[sub_resource type="SegmentShape2D" id="2"]
+a = Vector2(70, 0)
+b = Vector2(-70, 0)
+
+[node name="SpinningTop" type="CharacterBody2D"]
+script = ExtResource("1")
+input_speed = null
+gravity_magnitude = null
+horizontal_amplitude = null
+horizontal_period = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("1")
+animation = &"spinning"
+frame = 2
+offset = Vector2(-5, -265)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.78186, -199.561)
+shape = SubResource("2")
+
+[node name="FallSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7")

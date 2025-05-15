@@ -14,7 +14,7 @@ func _ready():
 	accumulated_time = 0
 	animation_player.play("jump")
 	
-	yield(get_tree().create_timer(0.15), "timeout")
+	await get_tree().create_timer(0.15).timeout
 	
 	perform_jump()
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b8mplmr3sn4g2"
+path="res://.godot/imported/Bubble Pop Dance.ogg-0110aa20af3f61dc41b79c9ccc486dea.oggvorbisstr"
+
+[deps]
+
+source_file="res://scenes/microgames/kite/assets/Bubble Pop Dance.ogg"
+dest_files=["res://.godot/imported/Bubble Pop Dance.ogg-0110aa20af3f61dc41b79c9ccc486dea.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

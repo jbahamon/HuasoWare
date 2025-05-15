@@ -8,7 +8,7 @@ var min_abs_speed = 20
 func _ready():
 	kinematic_body.velocity.y = gravity
 	animation_player.play("land")
-	var _error = animation_player.connect("animation_finished", self, "landing_finished", [], CONNECT_ONESHOT)
+	var _error = animation_player.connect("animation_finished", Callable(self, "landing_finished").bind(), CONNECT_ONE_SHOT)
 
 
 func _unhandled_input(event):

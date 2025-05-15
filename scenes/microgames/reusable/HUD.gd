@@ -2,6 +2,7 @@ extends CanvasLayer
 signal message_over
 
 func show_message(text):
+	$GameStatus.visible = true
 	$GameStatus.text = text
 	$AnimationPlayer.play("pop")
 

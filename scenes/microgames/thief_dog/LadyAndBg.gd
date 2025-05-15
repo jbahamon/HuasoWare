@@ -6,9 +6,12 @@ var look_time = 1.2
 
 enum State {LOOKING, DOUBTING, TALKING}
 
+
+@onready var speech: AnimatedSprite2D = $SpeechBubble/Content
+
 var current_state = State.LOOKING
 var accumulated_time = 0.0
-var current_threshold = rand_range(0.1 * look_time, look_time)
+var current_threshold = randf_range(0.1 * look_time, look_time)
 
 func is_looking():
 	return current_state == State.LOOKING
@@ -20,26 +23,27 @@ func _process(delta):
 		accumulated_time = 0
 		match current_state: 
 			State.TALKING:
-				$AnimatedSprite.animation = "doubt"
-				$SpeechBubble.on_doubt()
+				$AnimatedSprite2D.animation = "doubt"
+				speech.play("dots")
 				current_state = State.DOUBTING
 				current_threshold = doubt_time
 			State.DOUBTING:
-				$AnimatedSprite.animation = "look"
-				$SpeechBubble.on_look()
+				$AnimatedSprite2D.animation = "look"
+				speech.play("question")
 				current_state = State.LOOKING
 				current_threshold = look_time
 			State.LOOKING:
-				$AnimatedSprite.animation = "talk"
-				$SpeechBubble.on_talk()
+				$AnimatedSprite2D.animation = "talk"
+				speech.play("default")
 				current_state = State.TALKING
-				current_threshold = rand_range(0.3 * talk_time, talk_time)
+				current_threshold = randf_range(0.3 * talk_time, talk_time)
 
 func on_catch_dog():
-	$AnimatedSprite.animation = "look"
+	$AnimatedSprite2D.animation = "look"
 	$SpeechBubble.visible = false
 	$AngrySound.play()
 	
 func freeze():
 	set_process(false)
-	$AnimatedSprite.stop()
+	speech.pause()
+	$AnimatedSprite2D.stop()

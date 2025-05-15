@@ -1,121 +1,113 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://c6b5x1n135ph6"]
 
-[ext_resource path="res://scenes/microgames/reusable/HUD.gd" type="Script" id=1]
-[ext_resource path="res://assets/ui/uyui.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/fonts/OpenDyslexic-Bold.otf" type="DynamicFontData" id=3]
-[ext_resource path="res://assets/ui/record_scratch.wav" type="AudioStream" id=4]
-[ext_resource path="res://assets/fonts/OpenDyslexicMono-Regular.otf" type="DynamicFontData" id=5]
+[ext_resource type="Script" uid="uid://d1kf4q7eb66mj" path="res://scenes/microgames/reusable/HUD.gd" id="1"]
+[ext_resource type="Theme" uid="uid://cpdo5t1tb74nu" path="res://assets/Theme.tres" id="2_agxl1"]
+[ext_resource type="AudioStream" uid="uid://65blqtbonyxg" path="res://assets/ui/cheer.wav" id="3_agxl1"]
+[ext_resource type="AudioStream" uid="uid://by72xpjo72nw0" path="res://assets/ui/boo.wav" id="4_aw34g"]
 
-[sub_resource type="DynamicFont" id=1]
-size = 80
-outline_size = 10
-outline_color = Color( 0.0941176, 0.0627451, 0.0627451, 1 )
-font_data = ExtResource( 3 )
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 length = 1.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("GameStatus:rect_scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
+tracks/0/path = NodePath("GameStatus:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0.5, 0.5 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
+"values": [Vector2(0.5, 0.5), Vector2(1.5, 1.5), Vector2(1, 1)]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("GameStatus:rect_rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
+tracks/1/path = NodePath("GameStatus:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.7, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ -45.0, 0.0, 15.0, 0.0 ]
+"values": [-0.767945, 0.0, 0.247837, 0.0]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("GameStatus:custom_colors/font_color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
+tracks/2/path = NodePath("GameStatus:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2, 0.9, 1.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.2, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("GameStatus:custom_colors/font_outline_modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
+tracks/3/path = NodePath("GameStatus:theme_override_colors/font_outline_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.2, 0.9, 1.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.2, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="DynamicFont" id=3]
-size = 50
-outline_size = 7
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 5 )
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aw34g"]
+_data = {
+&"pop": SubResource("2")
+}
 
 [node name="HUD" type="CanvasLayer"]
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [node name="GameStatus" type="Label" parent="."]
+visible = false
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -176.894
-margin_top = -64.3835
-margin_right = 195.106
-margin_bottom = 75.6165
-rect_rotation = -45.0
-rect_scale = Vector2( 0.5, 0.5 )
-rect_pivot_offset = Vector2( 183.813, 66.3591 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 1, 1, 0 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 0 )
+offset_left = -176.894
+offset_top = -64.3835
+offset_right = 195.106
+offset_bottom = 75.6165
+rotation = -0.767945
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(183.813, 66.3591)
+theme = ExtResource("2_agxl1")
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 40
 text = "UYUUUUI"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/pop = SubResource( 2 )
-
-[node name="Timer" type="Label" parent="."]
-visible = false
-anchor_right = 1.0
-margin_bottom = 88.0
-custom_fonts/font = SubResource( 3 )
-text = "0:00.00"
-align = 1
-valign = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
+libraries = {
+&"": SubResource("AnimationLibrary_aw34g")
 }
 
+[node name="Timer" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 88.0
+theme = ExtResource("2_agxl1")
+text = "0:00.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
 [node name="WinSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource("3_agxl1")
 volume_db = -10.0
 
 [node name="LoseSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource("4_aw34g")
 volume_db = -20.0
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

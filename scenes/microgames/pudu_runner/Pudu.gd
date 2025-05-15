@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 class_name PersistentState
 
@@ -18,6 +18,6 @@ func change_state(new_state_name):
 	state.queue_free()
 	state = state_factory.get_state(new_state_name)
 	state.name = "current_state"
-	state.setup(funcref(self, "change_state"), $AnimationPlayer, $AnimatedSprite, self)
+	state.setup(funcref(self, "change_state"), $AnimationPlayer, $AnimatedSprite2D, self)
 	add_child(state)
 	
