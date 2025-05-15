@@ -131,6 +131,7 @@
 	{
 		"category": "sounds",
 		"author_name": "By Hanna-Barbera, organized by John Donahue Bell",
+		"author_literal": true,
 		"author_url": "https://lazy-brain-games.itch.io/",
 		"asset_name": "Hanna Barera SFX5 Audio Pack Lazy Brain Games edition",
 		"asset_url": "https://lazy-brain-games.itch.io/hanna-barera-sfx5-lazy-brain-games-edition",
@@ -171,6 +172,6 @@
 		"asset_name": "Alpha Dance",
 		"asset_url": "https://kenney.itch.io/kenney-game-assets",
 		"asset_usage": "Game transition song"
-	},
+	}
 	
 ]
