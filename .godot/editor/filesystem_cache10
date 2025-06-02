@@ -1,11 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1747273245
-CREDITS.json::JSON/JSON::-1::1747253804::0::1::::<><><>0<>0<><>::
+::res://::1747361048
+CREDITS.json::JSON::-1::1747273493::0::1::::<><><>0<>0<><>::
 default_bus_layout.tres::AudioBusLayout/AudioBusLayout::-1::1747076716::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D/CompressedTexture2D::3161052073893292300::1747076661::1747076751::1::::<><><>0<>0<>eefe5170661d184390df6a6b0a44334a<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
+README.md::TextFile::-1::1747273723::0::1::::<><><>0<>0<><>::
 StateFactory.gd::GDScript/GDScript::2759451455319603965::1747076716::0::1::::StateFactory<>RefCounted<><>0<>0<><>::
-::res://assets/::1747262913
-Theme.tres::Theme/Theme::5832771805909213234::1747262913::0::1::::<><><>0<>0<><>::uid://bhjx5a1uffeib::::res://assets/fonts/CrayonLibre/CrayonLibre.otf
+::res://assets/::1747273466
+Theme.tres::Theme::5832771805909213234::1747273466::0::1::::<><><>0<>0<><>::uid://bhjx5a1uffeib::::res://assets/fonts/CrayonLibre/CrayonLibre.otf
 ::res://assets/bgs/::1747076752
 bgA0.png::CompressedTexture2D/CompressedTexture2D::2927192535184842142::1747076660::1747076752::1::::<><><>0<>0<>11d5e2f56e10038f147ee216eed28633<>res://.godot/imported/bgA0.png-79ab8407b7168b9a467c4e592e9f597c.ctex::
 bgA1.png::CompressedTexture2D/CompressedTexture2D::6140677117760043340::1747076660::1747076752::1::::<><><>0<>0<>48a887c478592e8bf477f447186f7248<>res://.godot/imported/bgA1.png-c7e81d50c8b346a0a46a1dfe82a071fc.ctex::
@@ -49,25 +50,25 @@ arrow1.png::CompressedTexture2D/CompressedTexture2D::3682243457212228411::174707
 arrow2.png::CompressedTexture2D/CompressedTexture2D::268182113232614680::1747076661::1747076751::1::::<><><>0<>0<>5320b5a4bcadbf2f980b759797b5ce8e<>res://.godot/imported/arrow2.png-abd4334036ca1df6dadf8da5014de4c5.ctex::
 boo.wav::AudioStreamWAV/AudioStreamWAV::4138694253633725841::1747200620::1747200649::1::::<><><>0<>0<>ea2c1daac50bb6b43aa68a0ec281fc08<>res://.godot/imported/boo.wav-50c94d0deefca0bb55344af01d42a0b5.sample::
 cheer.wav::AudioStreamWAV/AudioStreamWAV::2237866715916087324::1747200559::1747200644::1::::<><><>0<>0<>366560e9d0039c1f0302ddeda084a070<>res://.godot/imported/cheer.wav-b7877e4f1beda6b969e4102db5c436a7.sample::
-::res://scenes/::1747269638
+::res://scenes/::1747273493
 credits.gd::GDScript/GDScript::7239246030022436339::1747268692::0::1::::<>MarginContainer<><>0<>0<><>::
-Credits.tscn::PackedScene/PackedScene::1402649827509926301::1747269618::0::1::::<><><>0<>0<><>::uid://dukdeivtm04o5::::res://scenes/menu_bg.tres<>uid://cpdo5t1tb74nu::::res://assets/Theme.tres<>uid://dbe0lbccyvqnr::::res://scenes/credits.gd
-default_env.tres::Environment/Environment::5941740720956417796::1747269638::0::1::::<><><>0<>0<><>::
+Credits.tscn::PackedScene::1402649827509926301::1747273483::0::1::::<><><>0<>0<><>::uid://dukdeivtm04o5::::res://scenes/menu_bg.tres<>uid://cpdo5t1tb74nu::::res://assets/Theme.tres<>uid://dbe0lbccyvqnr::::res://scenes/credits.gd
+default_env.tres::Environment::5941740720956417796::1747273493::0::1::::<><><>0<>0<><>::
 GameContainer.gd::GDScript/GDScript::1879017036606401427::1747269618::0::1::::<>Node<><>0<>0<><>::
-GameContainer.tscn::PackedScene/PackedScene::2879232183983275358::1747269638::0::1::::<><><>0<>0<><>::uid://11hevj5wytix::::res://scenes/GameContainer.gd<>uid://cpdo5t1tb74nu::::res://assets/Theme.tres<>uid://c7v8b0jaos7om::::res://assets/bgs/bgB2.png<>uid://cenq1dgfl8jxn::::res://assets/bgs/bgB3.png<>uid://uak3276w112v::::res://assets/bgs/bgB4.png<>uid://dy0ubcvdnhdqe::::res://assets/bgs/bgB1.png<>uid://bphwt7sdtsq3j::::res://assets/game_container/Alpha Dance.ogg
+GameContainer.tscn::PackedScene::2879232183983275358::1747273493::0::1::::<><><>0<>0<><>::uid://11hevj5wytix::::res://scenes/GameContainer.gd<>uid://cpdo5t1tb74nu::::res://assets/Theme.tres<>uid://c7v8b0jaos7om::::res://assets/bgs/bgB2.png<>uid://cenq1dgfl8jxn::::res://assets/bgs/bgB3.png<>uid://uak3276w112v::::res://assets/bgs/bgB4.png<>uid://dy0ubcvdnhdqe::::res://assets/bgs/bgB1.png<>uid://bphwt7sdtsq3j::::res://assets/game_container/Alpha Dance.ogg
 MainMenu.gd::GDScript/GDScript::620816658794610360::1747262140::0::1::::<>MarginContainer<><>0<>0<><>::
-MainMenu.tscn::PackedScene/PackedScene::7767518009792593963::1747269618::0::1::::<><><>0<>0<><>::uid://cpdo5t1tb74nu::::res://assets/Theme.tres<>uid://dukdeivtm04o5::::res://scenes/menu_bg.tres<>uid://i3y03f8tb5qi::::res://scenes/MainMenu.gd
-menu_bg.tres::AnimatedTexture/AnimatedTexture::8583872449042487190::1747268158::0::1::::<><><>0<>0<><>::uid://bhx7oy82y4xby::::res://assets/bgs/bgA0.png<>uid://ctqub4smgebf5::::res://assets/bgs/bgA1.png<>uid://bfhvrjmx6w7s6::::res://assets/bgs/bgA2.png<>uid://dol553qttwpe4::::res://assets/bgs/bgA3.png
+MainMenu.tscn::PackedScene::7767518009792593963::1747273483::0::1::::<><><>0<>0<><>::uid://cpdo5t1tb74nu::::res://assets/Theme.tres<>uid://dukdeivtm04o5::::res://scenes/menu_bg.tres<>uid://i3y03f8tb5qi::::res://scenes/MainMenu.gd
+menu_bg.tres::AnimatedTexture::8583872449042487190::1747273466::0::1::::<><><>0<>0<><>::uid://bhx7oy82y4xby::::res://assets/bgs/bgA0.png<>uid://ctqub4smgebf5::::res://assets/bgs/bgA1.png<>uid://bfhvrjmx6w7s6::::res://assets/bgs/bgA2.png<>uid://dol553qttwpe4::::res://assets/bgs/bgA3.png
 TestGame.gd::GDScript/GDScript::6065250221558762437::1747076716::0::1::::<>Node<><>0<>0<><>::
 TestGame.tscn::PackedScene/PackedScene::-1::1747076716::0::1::::<><><>0<>0<><>::res://assets/Theme.tres<>res://scenes/TestGame.gd<>res://scenes/microgames/reusable/HUD.tscn
-::res://scenes/credits/::1747269618
+::res://scenes/credits/::1747273484
 credits_entry.gd::GDScript/GDScript::1530757642087854638::1747268678::0::1::::<>MarginContainer<><>0<>0<><>::
-credits_entry.tscn::PackedScene/PackedScene::1419976985363308805::1747269618::0::1::::<><><>0<>0<><>::uid://cpdo5t1tb74nu::::res://assets/Theme.tres<>uid://v2rmcb4mm27c::::res://scenes/credits/credits_entry.gd
+credits_entry.tscn::PackedScene::1419976985363308805::1747273484::0::1::::<><><>0<>0<><>::uid://cpdo5t1tb74nu::::res://assets/Theme.tres<>uid://v2rmcb4mm27c::::res://scenes/credits/credits_entry.gd
 ::res://scenes/microgames/::1747102044
 Microgame.gd::GDScript/GDScript::1308732090093190318::1747102044::0::1::::<>Node<><>0<>0<><>::
-::res://scenes/microgames/bellnstick/::1747269618
+::res://scenes/microgames/bellnstick/::1747273483
 Bell.gd::GDScript/GDScript::1455639664948300619::1747097543::0::1::::<>RigidBody2D<><>0<>0<><>::
-Bell.tscn::PackedScene/PackedScene::6369769317077445952::1747269618::0::1::::<><><>0<>0<><>::uid://u0ef4sjciy00::::res://scenes/microgames/bellnstick/Bell.gd<>uid://c50i3dos645dg::::res://scenes/microgames/bellnstick/assets/bell.png<>uid://bu27u1yw482y1::::res://scenes/microgames/bellnstick/assets/fall.wav<>uid://cdeuacqygfj32::::res://scenes/microgames/bellnstick/assets/throw.wav
+Bell.tscn::PackedScene::6369769317077445952::1747273483::0::1::::<><><>0<>0<><>::uid://u0ef4sjciy00::::res://scenes/microgames/bellnstick/Bell.gd<>uid://c50i3dos645dg::::res://scenes/microgames/bellnstick/assets/bell.png<>uid://bu27u1yw482y1::::res://scenes/microgames/bellnstick/assets/fall.wav<>uid://cdeuacqygfj32::::res://scenes/microgames/bellnstick/assets/throw.wav
 BellNStickMain.gd::GDScript/GDScript::3830838987924205874::1747104822::0::1::::<>Node<><>0<>0<><>::
 BellNStickMain.tscn::PackedScene/PackedScene::3118670388893406812::1747200473::0::1::::<><><>0<>0<><>::res://scenes/microgames/bellnstick/Stick.tscn<>uid://cw0tf1smjc56k::::res://scenes/microgames/bellnstick/Bell.tscn<>uid://butxmgmckvr0u::::res://scenes/microgames/bellnstick/BellNStickMain.gd<>uid://c6b5x1n135ph6::::res://scenes/microgames/reusable/HUD.tscn<>res://scenes/microgames/bellnstick/WinBell.tscn<>uid://c752g8qv735c1::::res://scenes/microgames/bellnstick/assets/bg4.png<>uid://bctdy7xsgljom::::res://scenes/microgames/bellnstick/assets/bg3.png<>uid://dpwywm711ed0i::::res://scenes/microgames/bellnstick/assets/bg2.png<>uid://u70hae2m3mvd::::res://scenes/microgames/bellnstick/assets/bg1.png<>uid://2lajsswm1dms::::res://scenes/microgames/bellnstick/assets/bg8.png<>uid://bfj83btaj3cq7::::res://scenes/microgames/bellnstick/assets/bg7.png<>uid://b1s7jvy3g0uhk::::res://scenes/microgames/bellnstick/assets/bg5.png<>uid://24e6teoibaxp::::res://scenes/microgames/bellnstick/assets/bg6.png<>uid://bg5bh1puhsay7::::res://scenes/microgames/bellnstick/assets/crash.wav<>uid://cngnh3tjctp1r::::res://scenes/microgames/bellnstick/assets/hit.wav<>uid://b5r4g7yb5sv1s::::res://scenes/microgames/bellnstick/assets/Pop Party.ogg
 Stick.gd::GDScript/GDScript::1639962961587595694::1747095597::0::1::::<>Area2D<><>0<>0<><>::
@@ -168,10 +169,10 @@ WalkState.gd::GDScript/GDScript::679542713262532651::1747076716::0::1::::WalkSta
 ::res://scenes/microgames/pudu_runner/sections/::1747076750
 section0.tscn::PackedScene/PackedScene::-1::1747076716::0::1::::<><><>0<>0<><>::res://assets/pudu_runner/tileset.png<>res://scenes/microgames/pudu_runner/sections/section.gd
 section.gd::GDScript/GDScript::6910801100312733735::1747076716::0::1::::<>Node2D<><>0<>0<><>::
-::res://scenes/microgames/reusable/::1747269618
+::res://scenes/microgames/reusable/::1747273484
 HUD.gd::GDScript/GDScript::9005172026187493541::1747099360::0::1::::<>CanvasLayer<><>0<>0<><>::
-HUD.tscn::PackedScene/PackedScene::6952623867871568633::1747269618::0::1::::<><><>0<>0<><>::uid://d1kf4q7eb66mj::::res://scenes/microgames/reusable/HUD.gd<>uid://cpdo5t1tb74nu::::res://assets/Theme.tres<>uid://65blqtbonyxg::::res://assets/ui/cheer.wav<>uid://by72xpjo72nw0::::res://assets/ui/boo.wav
-::res://scenes/microgames/thief_dog/::1747269618
+HUD.tscn::PackedScene::6952623867871568633::1747273484::0::1::::<><><>0<>0<><>::uid://d1kf4q7eb66mj::::res://scenes/microgames/reusable/HUD.gd<>uid://cpdo5t1tb74nu::::res://assets/Theme.tres<>uid://65blqtbonyxg::::res://assets/ui/cheer.wav<>uid://by72xpjo72nw0::::res://assets/ui/boo.wav
+::res://scenes/microgames/thief_dog/::1747273484
 BeamCreator.gd::GDScript/GDScript::7571466558864988595::1747079198::0::1::::<>Node2D<><>0<>0<><>::
 BeamCreator.tscn::PackedScene/PackedScene::-1::1747076716::0::1::::<><><>0<>0<><>::res://scenes/microgames/thief_dog/BeamCreator.gd
 BeamEffect.gd::GDScript/GDScript::3533167862030565697::1747076716::0::1::::<>Sprite2D<><>0<>0<><>::
@@ -184,7 +185,7 @@ LadyAndBg.gd::GDScript/GDScript::5810068111312450305::1747089875::0::1::::<>Node
 LadyAndBg.tscn::PackedScene/PackedScene::5976901524854379075::1747090219::0::1::::<><><>0<>0<><>::uid://tsblnle3mtrj::::res://scenes/microgames/thief_dog/assets/bg/bg2.png<>uid://bd1au38ww0oh7::::res://scenes/microgames/thief_dog/assets/bg/bg3.png<>uid://djlq4grng5wyw::::res://scenes/microgames/thief_dog/assets/bg/bg1.png<>uid://co1o8cydygyl2::::res://scenes/microgames/thief_dog/LadyAndBg.gd<>uid://bxwayt7wseqqh::::res://scenes/microgames/thief_dog/assets/speech/bubble.png<>uid://b4o3vn5bgpo4p::::res://scenes/microgames/thief_dog/assets/speech/question.png<>uid://bhkynm7eluui6::::res://scenes/microgames/thief_dog/assets/speech/talk1.png<>uid://dfs8xuasaeebf::::res://scenes/microgames/thief_dog/assets/alarm.ogg<>uid://mun31b6osjwa::::res://scenes/microgames/thief_dog/assets/speech/talk2.png<>uid://cafubjb7hnxl4::::res://scenes/microgames/thief_dog/assets/speech/talk3.png<>uid://cx6kg748enxqf::::res://scenes/microgames/thief_dog/assets/speech/talk4.png<>uid://dyqtgxjnpindr::::res://scenes/microgames/thief_dog/assets/speech/talk5.png<>uid://cysn68sotf2h2::::res://scenes/microgames/thief_dog/assets/speech/talk6.png<>uid://oickbyd0iq4::::res://scenes/microgames/thief_dog/assets/speech/talk7.png<>uid://cydiouft8gqyk::::res://scenes/microgames/thief_dog/assets/speech/talk8.png<>uid://bj4ufl6yefsb1::::res://scenes/microgames/thief_dog/assets/speech/talk9.png<>uid://bk7dpje7v4yia::::res://scenes/microgames/thief_dog/assets/speech/talk10.png<>uid://c7e8m5bcmok4f::::res://scenes/microgames/thief_dog/assets/speech/talk11.png<>uid://coqijduu10sq6::::res://scenes/microgames/thief_dog/assets/speech/talk12.png<>uid://dwb41oi7hd64s::::res://scenes/microgames/thief_dog/assets/speech/talk13.png<>uid://bowhlcox11dcv::::res://scenes/microgames/thief_dog/assets/speech/talk14.png<>uid://ct7yj3mll863i::::res://scenes/microgames/thief_dog/assets/speech/dots.png
 LadyCloseUp.gd::GDScript/GDScript::1990657014007599350::1747076716::0::1::::<>Camera2D<><>0<>0<><>::
 ThiefDog.gd::GDScript/GDScript::6075432475545685470::1747104005::0::1::::<>Node<><>0<>0<><>::
-ThiefDog.tscn::PackedScene/PackedScene::2263168551075664637::1747269618::0::1::::<><><>0<>0<><>::uid://css8qq65jk1xi::::res://scenes/microgames/thief_dog/ThiefDog.gd<>uid://crfixvjqvtl8n::::res://scenes/microgames/thief_dog/LadyAndBg.tscn<>uid://c6b5x1n135ph6::::res://scenes/microgames/reusable/HUD.tscn<>uid://c4d2klpfy6mv3::::res://scenes/microgames/thief_dog/assets/bg/bbq.png<>uid://dpkyicvudx2l2::::res://scenes/microgames/thief_dog/assets/bg/empanada.png<>uid://qcw0fb62s0er::::res://scenes/microgames/thief_dog/Dog.tscn<>uid://goupmh12linp::::res://scenes/microgames/thief_dog/DogBG.tscn<>uid://58yg2fipqwlw::::res://scenes/microgames/thief_dog/assets/Sneaky Steps.ogg<>uid://3mj3hxqguoli::::res://scenes/microgames/thief_dog/LadyCloseUp.gd<>uid://fbgpg34efci5::::res://scenes/microgames/thief_dog/assets/dog/superbg.png<>uid://b3eywd13uudt2::::res://scenes/microgames/thief_dog/assets/win.wav<>uid://b1xp1dkxtirc4::::res://scenes/microgames/thief_dog/assets/zoom.wav
+ThiefDog.tscn::PackedScene::2263168551075664637::1747273484::0::1::::<><><>0<>0<><>::uid://css8qq65jk1xi::::res://scenes/microgames/thief_dog/ThiefDog.gd<>uid://crfixvjqvtl8n::::res://scenes/microgames/thief_dog/LadyAndBg.tscn<>uid://c6b5x1n135ph6::::res://scenes/microgames/reusable/HUD.tscn<>uid://c4d2klpfy6mv3::::res://scenes/microgames/thief_dog/assets/bg/bbq.png<>uid://dpkyicvudx2l2::::res://scenes/microgames/thief_dog/assets/bg/empanada.png<>uid://qcw0fb62s0er::::res://scenes/microgames/thief_dog/Dog.tscn<>uid://goupmh12linp::::res://scenes/microgames/thief_dog/DogBG.tscn<>uid://58yg2fipqwlw::::res://scenes/microgames/thief_dog/assets/Sneaky Steps.ogg<>uid://3mj3hxqguoli::::res://scenes/microgames/thief_dog/LadyCloseUp.gd<>uid://fbgpg34efci5::::res://scenes/microgames/thief_dog/assets/dog/superbg.png<>uid://b3eywd13uudt2::::res://scenes/microgames/thief_dog/assets/win.wav<>uid://b1xp1dkxtirc4::::res://scenes/microgames/thief_dog/assets/zoom.wav
 ::res://scenes/microgames/thief_dog/assets/::1747269042
 alarm.ogg::AudioStreamOggVorbis/AudioStreamOggVorbis::7549410854148649367::1747114860::1747114922::1::::<><><>0<>0<>48886f47a8aba60f813a8903aabcb889<>res://.godot/imported/alarm.ogg-159e01b711d2c7ef68068851aabca470.oggvorbisstr::
 chomp.wav::AudioStreamWAV/AudioStreamWAV::5573900693468267201::1747192544::1747192554::1::::<><><>0<>0<>f5758d19fd67ebc8e9aa2ff43f1b3650<>res://.godot/imported/chomp.wav-bd81b58ba28006e1e95aa8e2db2e2425.sample::

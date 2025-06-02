@@ -1,8 +1,7 @@
-res://CREDITS.json
-res://assets/Theme.tres
 res://scenes/default_env.tres
-res://scenes/menu_bg.tres
 res://scenes/GameContainer.tscn
+res://assets/Theme.tres
+res://scenes/menu_bg.tres
 res://scenes/MainMenu.tscn
 res://scenes/microgames/bellnstick/Bell.tscn
 res://scenes/Credits.tscn
